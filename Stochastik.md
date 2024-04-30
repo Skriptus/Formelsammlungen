@@ -1,0 +1,7 @@
+- # Verteilung
+	- ## Z-Wert
+		- $z=\frac{x-\mu}{\sigma}$
+		- $\mu=$ Mittelwert
+		- $\sigma=$ Standart abweichung
+		-
+	-

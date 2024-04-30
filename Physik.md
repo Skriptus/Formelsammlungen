@@ -1,0 +1,143 @@
+- # **Vibration**
+	- $f=$ #Frequenz [$Hz=\frac{1}{s}$] $=\frac{\omega}{2\pi}$
+	- $\mathrm{T}=$ #Periode [$s$] $=\frac{1}{f}$
+	- $\gamma=$ #Dämpfung  $=\frac{\mu}{2m}$
+	- $\tau=$ #Abklingzeit $=\frac{1}{\gamma}$
+	- $\omega=$ #Kreisfrequenz [$\frac1s$] $=\sqrt{\omega_0²-\gamma}$
+	- $\Lambda=$ #log.Dekrement $=\gamma\mathrm{T}$
+	- **Herleitung**
+		- **Bewegungsgleichung**
+			- $m\ddot{x}=-kx$
+		- **Differnzialgleichung (DGL)**
+			- $\ddot{x}+\frac{k}{m}x=0$
+			- hat als Lösung eine Funktion
+		- **Ansatz**
+			- $x\left(t\right)=e^{\lambda t}=x$
+			- $\dot{x}\left(t\right)=\lambda e^{\lambda t}=\lambda x$
+			- $\ddot{x}\left(t\right)=\lambda ² e^{\lambda t}=\lambda² x$
+				- $\ddot{x}+\frac{k}{m}x=\lambda²x+\frac{k}{m}x=0$
+		- **Charakteristische Gleichung**
+			- $\lambda²+\frac{k}{m}=0$
+			- hat als Lösung eine Variable $\lambda$
+			- Lösen mit der Mitternachtsformel
+				- $\lambda_{1,2}=\frac{-0\pm\sqrt{0²-4\frac{k}{m}}}{2}=\pm\sqrt{-\frac{k}{m}}$
+			- minus unter der Wurzel mit $i$ Lösen
+				- $\lambda_{1,2}=\pm\sqrt{i²\frac{k}{m}}=\pm i\sqrt{\frac{k}{m}}\coloneqq\pm i\omega$
+		- Lösung als Ansatz für zwei Lösungen der DGl
+			- $x_1\left(t\right)=e^{\lambda_1 t}=e^{i\omega t}$
+				- $\Rightarrow z\coloneq x_1\left(t\right)$
+			- $x_2\left(t\right)=e^{\lambda_2 t}=e^{i\omega t}$
+				- $\Rightarrow z\star\coloneq x_2\left(t\right)$
+		- **Allgemeine Lösung der DGL**
+			- $x\left(t\right)=A\cdot x_1\left(t\right)+B\cdot x_2\left(t\right)=A\cdot z+B\cdot z\star$
+		- *umwandlung in reale Zahlen*
+			- $A=B=\frac12\to x\left(t\right)=\frac12\left(e^{i\omega t}+e^{-i\omega t}\right)$
+				- ![image.png](../assets/image_1703624505668_0.png){:height 197, :width 225}
+			- $A=-B=\frac{1}{2i}\to x\left(t\right)=\frac{1}{2i}\left(e^{i\omega t}-e^{-i\omega t^{}}\right)$
+				- ![image.png](../assets/image_1703624521553_0.png){:height 199, :width 221}
+			- *allgemeine Lösung*
+				- $x\left(t\right)=A\cos\left(\omega t\right)+B\sin\left(\omega t\right)$
+				- $x\left(0\right)=A\cos\left(0\right)+B\sin\left(0\right)=A\cdot1+B\cdot0=A$
+				- $\dot{x}\left(0\right)=-A\omega\sin\left(0\right)+B\omega\cos\left(0\right)=-A\omega\cdot0+B\omega\cdot1=\omega B$
+			- **Anfangswertproblem**
+				- $x\left(0\right)=x_0$ und $\dot{x}_0=v_0$
+				- **Spezielle Lösung**
+					- $\Rightarrow x\left(t\right)=x_0\cos\left(\omega t\right)+\frac{v_0}{\omega}\sin\left(\omega t\right)$
+				-
+			-
+- # **Kinematik**
+	- $a$ = #Beschleunigung [$\frac{m}{s²}$]
+	- $v$ = #Geschwindigkeit [$\frac{m}{s}$]
+	- $s$ = #Weg #Auslenkung #Strecke [$m$]
+	- $v_0$ = #Anfangsgeschwindigkeit [$\frac{m}{s}$]
+	- $s_0$ = #Startpunkt [$m$]
+	- $f$ = #Frequenz [$Hz$]
+	- $T$ = #Periodendauer [$\frac{1}{s}$]
+	- $\omega$ = #Winkelgeschwindigkeit [$\frac{1}{s}$]
+	- $r$ = #Radius [$m$]
+- # **Kräfte**
+	- $F$ = #Kraft [$N$] [$\frac{kgm}{s²}$]
+	- $m$ = #Masse [$kg$]
+	- $F_G$ = #Schwerkraft#Gewichtskraft [$N$] [$\frac{kgm}{s²}$]
+	- $p$ = #Impuls [$Ns$] [$kg\frac{m}{s}$]
+- # **Arbeit**
+	- $dW=F\cdot dr$
+	- $J=$#Jule [$Nm=\frac{\operatorname{kg}m²}{s²}$]
+	- $W=$#Watt [$\frac{J}{s}=\frac{\operatorname{kg}m²}{s³}$]
+- # **Dynamik**
+- $\overrightarrow{r}=$ #Fahrstrahl $\left\lbrack\begin{pmatrix}x\\ y\end{pmatrix}\right\rbrack$
+- $J=$ #Trägheitsmoment [$\operatorname{kgm}²$]
+	- $J=m\cdot r²$
+- $\overrightarrow{L}=$ #Drehimpuls
+	- $\overrightarrow{L}=J\cdot\overrightarrow{\omega}$
+	- $\overrightarrow{M}=J\cdot\overrightarrow{\alpha}$
+	- $\overrightarrow{F}=m\cdot\overrightarrow{a}$
+	- $\overrightarrow{\omega}=\dot{}\overrightarrow{L}=J\cdot\overrightarrow{\alpha}$
+	- $F=M$ $\overrightarrow{F}=m\cdot\overrightarrow{a}\Longrightarrow\overrightarrow{M}=J\cdot\overrightarrow{a}$
+	- $v=\omega$
+	- $p=L$
+	- $m=J$
+	- $\overrightarrow{L}=J\cdot\overrightarrow{\omega}$
+	- $\overrightarrow{L}=m\cdot\overrightarrow{r}\times\left(\overrightarrow{\omega}\times\overrightarrow{r}\right)$
+- # **Statik**
+	- **Seil**
+		- -> Dehnstarr
+	- **Stab**
+		- -> Biegesteif
+		- -> Dehnstarr
+	- **Balken**
+		- -> Biegesteif
+		- -> Dehnstarr
+		- -> Querkräfte stabil
+		- -> Streckenlast stabil
+	- **Scheibe**
+		- -> Biegesteif
+		- -> Dehnstarr
+	- **Platte**
+		- -> Querkräfte stabil
+		- -> Streckenlast stabil
+		- -> Biegesteif
+		- -> Dehnstarr
+- # **Zentrale Stöße**
+	- **Volleslastisch**
+		- $v_1^{\prime}=2v_{sp}-v_1=\frac{\left(2v_2-v_1\right)m_2-m_1v_1}{m_1+m_2}$
+		- Impuls- + Energieerhaltung
+	- **Voll inelastisch**
+		- $v^{\prime}=v_{sp}=\frac{m_1v_1+m_2v_2}{m_1+m_2}$
+		- <ins>nur Impulserhaltung</ins>
+	- Energieverlust = $\frac12\cdot\frac{m_1\cdot m_2}{m_1+m_2}\left(v_1-v_2\right)²$
+- # **Rotation**
+	- $m\to J$
+	- $v\to\omega$
+- # **Schwingungen**
+	- $\omega=\sqrt{\frac{k}{m}}$
+	- $x\left(t\right)=A\cdot x_1\left(t\right)+B\cdot x_2\left(t\right)$
+	- $x\left(t\right)=x_0\cos\left(\omega t\right)+\frac{v_0}{\omega}\sin\left(\omega t\right)$
+	- $ma=-kx-\mu v\Rightarrow x+{\frac{\mu}{m}}x^{\prime\prime}+\frac{k}{m}x=0$
+	- **Resonanz**
+- # **Hydrodynamik**
+	- **Hydrostatischer Druck**
+		- $p=p_{s}+p_0$
+	- **Druck** $p\coloneq\frac{F}{A}$
+	- **Dichte** $\rho\coloneq\frac{m}{V}$
+	- Energie $E\coloneq pV$
+		- $\Delta E=Fs=pAs=pV$
+	- Eindringtiefe $h$
+		- $p\left(h\right)=\rho gh+p_0$
+	- Differntieller Ansatz
+		- $dp=-\rho gdh$
+		- $dp=-\frac{p}{R_{S}T}gdh$
+		- $TdV\frac{dp}{p}=-\frac{g}{R_{S}T}dh\to\int_{}^{}\frac{dp}{p}=-\int_{}^{}\frac{g}{R_{s}T}dh\to\ln\frac{p}{p_0}=-\frac{gh}{R_{S}T}$
+- # **Elastostatik**
+	- *Elastische* Verformung
+		- Reversibel, sobald die Kraft absetzt
+	- *Plastische* Verformung
+		- Irreversibel
+	- $\sigma\coloneq\frac{F}{A}$
+	- $\tau\coloneq\frac{F}{A}$
+	- $\mu\coloneq-\frac{\Delta d}{d}\cdot\frac{l}{\Delta l}$
+	- $\epsilon_{x}=\frac{1}{E}\sigma_{x}-\mu\left(\sigma_{y}-\sigma_{z}\right)+\alpha\Delta T$
+	- $\epsilon_{y}=\frac{1}{E}\sigma_{y}-\mu\left(\sigma_{x}-\sigma_{z}\right)+\alpha\Delta T$
+	- $\epsilon_{z}=\frac{1}{E}\sigma_{z}-\mu\left(\sigma_{x}-\sigma_{y}\right)+\alpha\Delta T$
+	- **Scherung**
+		- $E=\frac{\sigma}{\tau}G\left(1+\mu\right)$

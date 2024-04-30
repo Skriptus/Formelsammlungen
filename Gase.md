@@ -1,0 +1,79 @@
+- # ***Konstanten***
+	- ### $C\degree\longrightarrow{}K$
+		- $T=t\degree C+273.15K$
+	- ### **Boltzman**
+		- $kB = \frac{R}{NA}= 1.380658 × 10^{-23} \frac{J}{K}$
+	- ### **Gaskonstante**
+		- $R = 8,314 \frac{J}{mol K}$
+	- ### **Avogadro-Konstante**
+		- $NA = 6,022 × 10^{23} \frac{1}{mol}$
+	- ### **Entropiekonstante**
+		- $C\lor k=k_{B}*ln(2)\thickapprox1,38\frac{J}{K}$
+		  id:: 66268140-3998-47c0-81cd-3651cc176681
+- # ***Formeln***
+	- ## **Zustandsgleichung**
+		- $pV=nRT=NkT$
+	- ## **Ideales Gasgesetz**
+		- $\frac{p_1V_1}{T_1}=\frac{p_2V_2}{T_2}$
+		- $\Rightarrow\frac{pV}{T}=const.$
+		- ### **Isotherm** (Boyle Gesetz)
+			- $p_1V_1=p_2V_2$
+			- $\Rightarrow pV=const.$
+		- ### **Isochor** (Gay-Lussac Gesetz)
+			- $\frac{p_1}{T_1}=\frac{p_2}{T_2}$
+			- $\Rightarrow\frac{p}{T}=const.$
+		- ### **Isobar** (Charles Gesetz)
+			- $P_1=P_2$
+			- $\frac{T_2}{T_1}=\frac{V_2}{V_1}$
+	- ## ***Mittlere Freie Weglänge***
+		- $\lambda=\frac{kT}{4\pi\sqrt2r²p}$
+		- ### Mittlere Freie Wegzeit
+			- $t_{\operatorname{mean}}=\frac{\lambda_{Weg}}{v_{rms}}$
+		- ### Moleküle pro m³
+			- $\frac{N}{V}=\frac{1}{\lambda4\pi\sqrt2r²}$
+			- $\frac{1m³}{1}\cdot\frac{1000L}{1m³}\cdot\frac{1mol}{xL}\cdot\frac{N_{A}}{1mol}$
+			-
+	- ## ***Geschwindigkeiten***
+		- ### Quadratische mittlere Geschwidnigkeit
+			- $v_{rms}=\sqrt{\frac{2RT}{M_{Mol}}}$
+		- ### Durschnitt
+			- $\overline{v}=\int_0^{\infty}vf\left(v\right)dv$
+			- $\overline{v}=\sqrt{\frac{8kT}{\pi m}}$
+		- ### 1Dimensional
+			- $f\left(v_{x}\right)=\sqrt{\frac{m}{2\pi kT}}e^{-\frac{mv_{x}²}{2kT}}$
+			- $v_{x}=\int_{-\infty}^{\infty}v_{x}f\left(v_{x}\right)dv_{x}=0$
+			- $|v_{x}|=2\int_0^{\infty}v_{x}f\left(v_{x}\right)dv_{x}=\sqrt{\frac{2kT}{\pi m}}$
+			- $v_{x}²=\int_{-\infty}^{\infty}v_{x}²f\left(v_{x}\right)dv_{x}=\frac{kT}{m}$
+		- ### Normalisierung
+			- $\int_0^{\infty}f\left(v\right)dv=1$
+			- $\int_0^{\infty}v²e^{-\frac{mv²}{2kT}}dv=\frac14\sqrt{\frac{\pi}{\frac{m}{2kT}³}}$
+		- ## **Maxwell-Boltzmann Gleichung**
+			- $f\left(v\right)dv=\frac{4}{\sqrt{\pi}}\left(\frac{m}{2kT}\right)^{\frac32}v²dv\cdot e^{-\frac{mv²}{2kT}}$
+			- ### Erwartungswerte
+				- ### Höchste Warscheinlichkeit
+					- $v^{\cdot}=\sqrt{\frac{2RT}{M}}$
+				- ### Mittlere Geschwindigkeit
+					- $v=\int_0^{\infty}vf\left(v\right)dv=\sqrt{\frac{8kT}{\pi m}}$
+				- Mittlere Quadratische Geschwindigkeit
+					- $v²=\int_0^{\infty}v²f\left(v\right)dv=\frac{3kT}{m}$
+					- $v_{rms}=\sqrt{v²}=\sqrt{\frac{3kT}{m}}$
+	- ## **Energie**
+		- $\frac12mv²=\frac32kT$
+	- ## **Transporteffekte**
+		- $V\frac{dn}{\mathrm{d}t}=j_0A-j_1A$
+		- ### **Diffustion**
+			- $j_{m}=-D\frac{d\phi}{dz}$
+			- $D=\frac13\overline{v}\Lambda$
+		- ### **Innere Reibung**
+			- $\tau=-\eta\frac{du}{\mathrm{d}z}$
+			- $\eta=\frac13p\overline{v}\Lambda$
+		- ### **Wärmeleitung**
+			- $\dot{q}=-\lambda\frac{dT}{dz}$
+			- $\lambda=\frac13\overline{v_{z}}nmc_{v}\Lambda$
+	- ## **Thermische Ausdenung**
+		- $\Delta l=l_0\cdot \alpha \cdot \Delta T$
+		- $V\approx V_0\left(1+3\alpha\Delta T_{C}\right)$
+		- $\gamma=\frac{1}{V}\frac{\partial V}{\partial T}|_{T_0}=3\alpha$
+-
+-
+-

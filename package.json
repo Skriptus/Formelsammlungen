@@ -1,0 +1,24 @@
+{
+  "name": "formelsammlung",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skriptus/Formelsammlungen.git"
+  },
+  "keywords": [
+    "formeln",
+    "Technische",
+    "Physik"
+  ],
+  "author": "Skriptus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Skriptus/Formelsammlungen/issues"
+  },
+  "homepage": "https://github.com/Skriptus/Formelsammlungen#readme"
+}

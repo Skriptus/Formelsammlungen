@@ -20,5 +20,9 @@
     "url": "https://github.com/Skriptus/Formelsammlungen/issues"
   },
   "homepage": "https://github.com/Skriptus/Formelsammlungen#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "require": "^2.4.20"
+  }
 }

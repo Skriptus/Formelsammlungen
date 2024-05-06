@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wohlstand für Aale</title>
-  
-  <link rel="stylesheet" href="main.css">
-  <script type="text/javascript" id="MathJax-script" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js">
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <title>Formeln für Aale</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
 
 <body>
-  <div class="grid-container">
-  <div class="container" id = "Main">
+  <div class="Main" id = "Main">
   </div>
-</div>
+  <template id="Formelcard" class="template">
+    <div class="Formelcard">This is the child content</div>
+    </template>
 <template id="Formelbutton" class="template">
-    <div class="Formelbutton">This is the child content</div>
+  <button class="Formelbutton">This is the child content</button>
   </template>
 <template id="Formel" class="template">
   <div>

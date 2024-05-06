@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<ul>
+    <li><h1 id="-funktionen-"><strong>Funktionen</strong></h1>
+    <ul>
+    <li>\( f \left(x\right)\) = Parametrisierte #Kurve</li>
+    <li>\(\stackrel{!}{=}\coloneq\max\)</li>
+    <li><strong>Minima/Maxima</strong><ul>
+    <li>Notwendige Bedingung für ein Extremum:<ul>
+    <li>\(f^{\prime}\left(x_0\right)=0\)</li>
+    </ul>
+    </li>
+    <li>1.Hinreichende Bedngung für ein Extremum:<ul>
+    <li>\(f^{\prime}\left(x<em>0\right)</em>{}\) hat einen Vorzeichenwechsel</li>
+    </ul>
+    </li>
+    <li>2.Hinreichende Bedingung für ein Extremum:<ul>
+    <li>\(f^{\prime\prime}\left(x<em>0\right)\neq0</em>{}\)</li>
+    </ul>
+    </li>
+    <li>Notwendige Bedingung für einen Wendepunkt (WP)<ul>
+    <li>\(f^{&#39;&#39;}\left(x_0\right)=0\)</li>
+    </ul>
+    </li>
+    <li>Minima/Maxima bestimmen durch Grenzen des Definitionsbereiches</li>
+    <li>Grenzen gehen gegen \)\pm\infty\) =&gt; f&#39; ist ein Min oder Max</li>
+    </ul>
+    </li>
+    <li><strong>Polynome</strong><ul>
+    <li>\(p\left(x\right)=a<em>{n}x^{n}+a</em>{n-1}x^{n-1}+\ldots+a_2x^2+a_1x+a_0\space\left\lbrace n\in\mathbb{N},a\in\mathbb{R}\right\rbrace\)<ul>
+    <li>Polynom vom Grad n</li>
+    </ul>
+    </li>
+    <li>\(f\left(x\right)=mx+h\)<ul>
+    <li>Lineares Polynom</li>
+    </ul>
+    </li>
+    <li>\(f\left(x\right)=17\cdot\left(x^0\right)\)<ul>
+    <li>Konstantes Polynom
+    -
+    -</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-substitution-"><strong>Substitution</strong></h1>
+    <ul>
+    <li>\(\int_{}^{}\cos\left(2t\right)\mathrm{d}t\)<ul>
+    <li><em>Substitution</em> \)x=2t\) #Substitution<ul>
+    <li>\(\frac{\mathrm{d}x}{\mathrm{d}t}=2\Rightarrow\mathrm{d}t=\frac12\mathrm{d}x\)</li>
+    <li>\(\int_{}^{}\cos\left(x\right)\left(\frac12\mathrm{d}x\right)=\frac12\sin x+C\)</li>
+    </ul>
+    </li>
+    <li><em>Rücksubstitution</em><ul>
+    <li>\(=\frac12\sin2t+C\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(\int_{}^{}\sqrt{x²+1}xdx\)<ul>
+    <li><strong>Substitution</strong> \)y=x²+1\)<ul>
+    <li>\(\frac{\mathrm{d}y}{\mathrm{d}x}=2x\Rightarrow\mathrm{d}x=\frac{\mathrm{d}y}{2x}\)</li>
+    <li>\(\int<em>{}^{}\sqrt{y}\cdot x\cdot\frac{\mathrm{d}y}{2x}=\frac12\int</em>{}^{}\sqrt{y}\cdot\mathrm{d}y\)</li>
+    <li>\(=\frac12\int_{}^{}y^{\frac12}dy=\frac12\frac{y^{\frac32}}{\frac32}+C=\frac13y^{\frac32}+C\)</li>
+    </ul>
+    </li>
+    <li><em>Rückstubstitution</em><ul>
+    <li>\(\frac13\left(x²+1\right)^{\frac32}+C\)</li>
+    <li>\(\int_{}^{}\left(x³+4\right)^{10}\cdot x²dx\)</li>
+    <li>\(y\coloneq x³+4\Rightarrow\frac{\mathrm{d}y}{\mathrm{d}x}=3x²\Rightarrow\mathrm{d}x=\frac{\mathrm{d}y}{3x²}\)</li>
+    <li>\(\int<em>{}^{}y^{10}\cdot x²\frac{dy}{3x²}=\frac13\int</em>{}^{}y^{10}dy=\frac{1}{33}y^{11}+C=\frac{1}{33}\left(x³+4\right)^{11}+C\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-vektoren-"><strong>Vektoren</strong></h1>
+    <ul>
+    <li>\(\overrightarrow{a}=\begin{pmatrix}x\ y\end{pmatrix}\) \)\overrightarrow{a}=\left(x,y,z\right)\) #Vektor</li>
+    <li>Skalarprodukt von parallelen Vektoren ist 0</li>
+    <li>Kreuzprodukt von orthogonalen Vektoren ist 0</li>
+    <li>Linear unabhängig = nicht parallel<ul>
+    <li>zwei Vektoren sind linear abhängig:&lt;=&gt;einer ein vielfaches des Anderen ist</li>
+    </ul>
+    </li>
+    <li><h2 id="-hesse-normalform-"><strong>Hesse Normalform</strong></h2>
+    <ul>
+    <li>\(g:x-2y=3\)<ul>
+    <li>\(\longrightarrow{}\overrightarrow{\left|n\right|}=\sqrt{\left(-1\right)²+2²}=\sqrt5\neq1\to:\sqrt5\)<ul>
+    <li>\(-\frac{1}{\sqrt5}x+\frac{2}{\sqrt5}y=\frac{3}{\sqrt5}\) #HNF</li>
+    <li>\(n_1x+n_2y=k\)<ul>
+    <li>\(\left|\overrightarrow{n}\right|=1\)</li>
+    <li>\(k=\left|\overrightarrow{a}\right|\cdot\cos\gamma\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(k=\) Abstand der Geraden zum Ursprung<ul>
+    <li>Lothgerade von \)g\)</li>
+    </ul>
+    </li>
+    <li>Lothfußpunkt bestimmen<ul>
+    <li>normalvektor mit \)k\) multipliziern<ul>
+    <li>\(\begin{pmatrix}-\frac{1}{\sqrt5}\ \frac{2}{\sqrt5}\end{pmatrix}\cdot\frac{3}{\sqrt5}=\) Lothfußpunkt</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h2 id="-vektorprodukt-kreuzprodukt-"><strong>Vektorprodukt/Kreuzprodukt</strong></h2>
+    <ul>
+    <li>\(\overrightarrow{a}\times\overrightarrow{b}=\overrightarrow{c}\) #Vektor<ul>
+    <li>\(\overrightarrow{a}=\begin{pmatrix}a_1\ a_2\ a_3\end{pmatrix}=a_1\cdot\begin{pmatrix}1\ 0\ 0\end{pmatrix}+a_2\cdot\begin{pmatrix}0\ 1\ 0\end{pmatrix}+a_3\cdot\begin{pmatrix}0\ 0\ 1\end{pmatrix}\)</li>
+    <li>\(\overrightarrow{a}\times\overrightarrow{b}=\left(a_1\overrightarrow{e_1}+a_2\overrightarrow{e_2}+a_3\overrightarrow{e_3}\right)\times\left(b_1\overrightarrow{e_1}+b_2\overrightarrow{e_2}+a_3\overrightarrow{e_3}\right)\)<ul>
+    <li>\(a_1b_1\left(\overrightarrow{e_1}\times\overrightarrow{e_1}\right)+a_1b_2\left(\overrightarrow{e_1}\times\overrightarrow{e_2}\right)+a_1b_3\left(\overrightarrow{e_1}\times\overrightarrow{e_3}\right)+a_2b_1\left(\overrightarrow{e_2}\times\overrightarrow{e_1}\right)+a_2b_2\left(\overrightarrow{e_2}\times\overrightarrow{e_2}\right)+a_2b_3\left(\overrightarrow{e_2}\times\overrightarrow{e_3}\right)+a_3b_1\left(\overrightarrow{e_3}\times\overrightarrow{e_1}\right)+a_3b_2\left(\overrightarrow{e_3}\times\overrightarrow{e_2}\right)+a_3b_3\left(\overrightarrow{e_3}\times\overrightarrow{e_3}\right)\)<ul>
+    <li>\(\left(a_2b_3-a_3b_2\right)\overrightarrow{e_1}+\left(a_3b_1-a_1b_3\right)\overrightarrow{e_2}+\left(a_1b_2-a_2b_1\right)\overrightarrow{e_3}\)</li>
+    <li>\(\begin{pmatrix}a_2b_3-a_3b_2\ a_3b_1-a_1b_3\ a_1b_2-a_2b1\end{pmatrix}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(\overrightarrow{a},\overrightarrow{b},\overrightarrow{c}\in\mathbb{R}³\)</li>
+    <li>\(\overrightarrow{c}\perp\overrightarrow{a},\overrightarrow{c}\perp\overrightarrow{b}\)</li>
+    <li>Skalarprodukt == 0 =&gt; Orthogonalität</li>
+    </ul>
+    </li>
+    <li>\(\left|\overrightarrow{a}\right|\cdot\left|\overrightarrow{b}\right|\cdot\sin\alpha=\left|\overrightarrow{c}\right|\)<ul>
+    <li>\(\overrightarrow{b}\cdot\sin\gamma=h\)</li>
+    </ul>
+    </li>
+    <li><em>Besonderheiten</em><ul>
+    <li>\(\overrightarrow{a}\times\overrightarrow{a}=\overrightarrow{0}\)</li>
+    <li>\(\overrightarrow{a}\times\overrightarrow{0}\) es gibt kein \)\gamma\)</li>
+    <li>\(\overrightarrow{a}\times\overrightarrow{b}=-\left(\overrightarrow{b}\times\overrightarrow{a}\right)\)</li>
+    <li>\(\overrightarrow{a}\times\left(\overrightarrow{b}+\overrightarrow{c}\right)=\overrightarrow{a}\times\overrightarrow{b}+\overrightarrow{a}\times\overrightarrow{c}\)</li>
+    </ul>
+    </li>
+    <li><em>Rechte Hand regel</em><ul>
+    <li>Daumen auf a, Zeigefinger auf b, Mittelfinger zeigt auf v</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h2 id="-ebenen-"><strong>Ebenen</strong></h2>
+    <ul>
+    <li>Punktrichtungsform von Ebene<ul>
+    <li>\(\overrightarrow{r}\left(\lambda,\mu\right)=\overrightarrow{a}+\lambda\cdot\overrightarrow{u}+\mu\cdot\overrightarrow{v}\)</li>
+    </ul>
+    </li>
+    <li>Implizite Form (Normalenvektor)<ul>
+    <li>\(\overrightarrow{n}=\overrightarrow{u}\times\overrightarrow{v}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h2 id="-lineare-abh-ngigkeit-"><strong>Lineare Abhängigkeit</strong></h2>
+    <ul>
+    <li>2 Vektoren sind <u>Un</u>abhängig wenn sich einer nicht durch ein vielfaches des Anderen darstellen lässt</li>
+    <li>eine Menge von Vektoren heit linear abhänig, wenn sich ein Vektor durch die lineare kombination (&quot;Erzeugen&quot;) von anderen Vektoren darstellen lässt.<ul>
+    <li>\(\overrightarrow{a}=\lambda<em>{n}\cdot\overrightarrow{n}+\lambda</em>{m}\cdot\overrightarrow{m}\)</li>
+    </ul>
+    </li>
+    <li>Eine Raumdimension wird durch n linear unabhängige Vektoren aufgespannt.<ul>
+    <li>Raumdimension+1 Vektoren sind immer linear abhängig</li>
+    </ul>
+    </li>
+    <li>Alle linear Kombinationen gleich 0 setzen =&gt; Lineare abhängigkeit<ul>
+    <li>\(v_1\lambda<em>1+v</em>{n}\lambda_{n}+\cdots=0\)</li>
+    <li>\(v<em>1=-v</em>{n}\cdot\frac{\lambda_{n}}{\lambda_1}+\cdots\)</li>
+    <li>LGS aus den Vektoren erstellen und auflösen</li>
+    <li>\(\omega\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-trigonometrie-"><strong>Trigonometrie</strong></h1>
+    <ul>
+    <li>\(\sin\alpha=\frac{Gegenkathete}{Hypotenuse}\)</li>
+    <li>\(\cos\alpha=\frac{Ankathete}{Hypoteuse}\)</li>
+    <li>\(\tan\alpha=\frac{Gegenkathete}{Ankathete}\)</li>
+    <li><em>Taylor-Reihen</em>
+      -</li>
+    </ul>
+    </li>
+    <li><h1 id="-differnzazion-inegration-"><strong>Differnzazion/Inegration</strong></h1>
+    <ul>
+    <li><strong>Potenzregel</strong><ul>
+    <li>\(\int x^{\alpha}dx=\frac{1}{\alpha+1}x^{\alpha+1}+C\)   \)\alpha\in\mathbb{R}\left\lbrack-1\right\rbrack\)<ul>
+    <li>\(\int\sqrt{x}\mathrm{d}x=\int x^{\frac12}dx=\frac{1}{\frac12+1}x^{\frac12+1}+C=\frac{1}{\frac32}x^{\frac32}+C=\frac23x^{\frac32}+C\)</li>
+    </ul>
+    </li>
+    <li><strong>Konstanter-Faktor-Regel</strong><ul>
+    <li>\(\int\alpha\cdot f\left(x\right)\mathrm{d}x=a\cdot\int f\left(x\right)\mathrm{d}x\)</li>
+    </ul>
+    </li>
+    <li><strong>Summenregel</strong><ul>
+    <li>\(\int\left(f\left(x\right)+g\left(x\right)\right)\mathrm{d}x=\int f\left(x\right)\mathrm{d}x+\int g\left(x\right)\mathrm{d}x\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(\int_{}^{}dx\) Unbestimmtes Integral von x</li>
+    <li>\(\frac{d}{\mathrm{d}x}\) Differenzation von x<ul>
+    <li>collapsed:: true<ul>
+    <li><ul>
+    <li>\(f^{\prime}\left(x\right)\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>Die <strong>Substitutionsregel</strong> ist die Umkehrung der Kettenregel #Substitution #Kettenregelsubstitution<ul>
+    <li>\(y=g\left(x\right)\Rightarrow\frac{\mathrm{d}y}{\mathrm{d}x}g^{\prime}\left(x\right)\Rightarrow\mathrm{d}y=g^{\prime}\left(x\right)\mathrm{d}x\)</li>
+    <li>\(\int_{}^{}f\left(y\right)\cdot\mathrm{d}y=F\left(y\right)+C\)</li>
+    <li>\(\int_{}^{}f\left(g\left(x\right)\right)g^{\prime}\left(x\right)\mathrm{d}x=F\left(g\left(x\right)\right)+C\)</li>
+    <li><em>Bestimmte Integrale</em><ul>
+    <li>Integralsgrenzen werden mit Substituiert</li>
+    <li>keine Rücksubstitution da Ergebnis eindeutig</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(\int<em>{}^{}u\cdot v^{\prime}dx=u\cdot v-\int</em>{}^{}u^{\prime}\cdot vdx\) #PartielleIntegragtion<ul>
+    <li>\(\int_{}^{}x\cdot\cos xdx\Rightarrow\)<ul>
+    <li>\(u=x\left|\right|v^{\prime}=\cos x\Rightarrow u^{\prime}=1\left|\right|v=\sin x\)<ul>
+    <li>\(x\cdot\sin x-\int_{}^{}1\cdot\sin xdx=x\cdot\sin x+\cos x+C\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><strong>Bestimmte Integralle</strong><ul>
+    <li>-&gt;Mathematisches Werkzeug das viele kleine veränderliche Größen, zu einer Gesammtgröße aufsummiert.</li>
+    <li>b-a = &quot;Integrationsweg&quot;</li>
+    <li>\(A=\lim<em>{n\to\infty}\sum</em>{i=1}^{n}f\left(x<em>{i}\right)\Delta x=:\int</em>{a}^{b}f\left(x\right)\mathrm{d}x\) #RiemannscheSumme</li>
+    <li><strong>Hauptsatzder Differnzial und Integralrechnung</strong> ( #HDI )<ul>
+    <li>\(\int_{a}^{b}f\left(x\right)\mathrm{d}x=F\left(b\right)-F\left(a\right)\) ohne C<ul>
+    <li>\(F\left(b\right)-F\left(a\right)=\left\lbrack F\left(x\right)\right\rbrack_{a}^{b}\)<ul>
+    <li>\(\int_0^1x²dx=F\left(1\right)-F\left(0\right)=\frac131³-\frac130³=\frac13\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h2 id="-l-hospital-grenzwertregeln-"><strong>L&#39;Hospital Grenzwertregeln</strong></h2>
+    <ul>
+    <li>Bernoulli-L&#39;Hospital</li>
+    <li>gesucht ist \)\lim_{x\longrightarrow{}x_0}\frac{f\left(x\right)}{g\left(x\right)}\)<ul>
+    <li>Falls \)\frac00oder\frac{\infty}{\infty}\) ensteht, versuche man</li>
+    <li>\(\lim_{x\longrightarrow{}x_0}\frac{f^{\prime}\left(x\right)}{g^{\prime}\left(x\right)}\) zu bilden. Wenn er existiert<ul>
+    <li>ist er gleich dem Ursprünglichen</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(\lim_{x\longrightarrow{}x<em>0}\frac{f\left(x\right)}{g\left(x\right)}=\frac00\stackrel{L^{\prime}H}{=}\lim</em>{x\longrightarrow{}x_0}\frac{f^{\prime}\left(x\right)}{g^{\prime}\left(x\right)}=L\)<ul>
+    <li>Beweis Seite 89</li>
+    </ul>
+    </li>
+    <li>manchmal muss es mehrfach angewendet werden</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-newton-tangenten-n-herungs-verfahren-"><strong>Newton-Tangenten-näherungs-Verfahren</strong></h1>
+    <ul>
+    <li>Newton Verfahren<ul>
+    <li>um schwierige Gleichungen nach x aufzulösen</li>
+    </ul>
+    </li>
+    <li>\(f\left(x\right)=0\)<ul>
+    <li>\(3x+4=0\)<ul>
+    <li>\(x=-\frac43\) #SymbolischeLösung</li>
+    <li>\(=-1,\overline{333333}\) #NumerischeLösung</li>
+    </ul>
+    </li>
+    <li>\(x²+x-1=0\) #Mitternachtsformel<ul>
+    <li>\(x_{1,2}=\frac{-1\pm\sqrt5}{2}\) #SymbolischeLösung</li>
+    <li>\(-1,6180\ldots\land0,6180\ldots\) #NumerischeLösung</li>
+    <li>Formeln für Grad 3 und 4 existieren (&quot;Cardano-shen Formeln&quot;) ab 5. Grad nur noch numerische Lösung möglich</li>
+    </ul>
+    </li>
+    <li>\(x^5+x-3=0\)<ul>
+    <li>{{renderer :tables_655c6564-a44e-41a0-a0bf-248d67a7cf17}}
+    collapsed:: true<ul>
+    <li>rows<ul>
+    <li>x<ul>
+    <li>-1<ul>
+    <li>+0<ul>
+    <li>+1<ul>
+    <li>+2</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>f(x)<ul>
+    <li>5<ul>
+    <li>-3<ul>
+    <li>-1<ul>
+    <li>+31</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>Beginne mit einem Startwert \)x_0\) in der nähe von x*</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(f^{\prime}\left(x_0\right)=\tan\alpha=\frac{f\left(x_0\right)}{x_0-x_1}\)<ul>
+    <li>nach \)x_1\) auflösen</li>
+    <li>\(f^{\prime}\left(x_0\right)\cdot\left(x_0-x_1\right)=f\left(x_0\right)\)</li>
+    <li>\(x_1=x_0-\frac{f\left(x_0\right)}{f^{\prime}\left(x_0\right)}\)<ul>
+    <li>für genauere werte belibig oft wiederholen</li>
+    </ul>
+    </li>
+    <li>\(x<em>{i+1}=x</em>{i}-\frac{f\left(x<em>{i}\right)}{f^{\prime}\left(x</em>{i}\right)}\)<ul>
+    <li>&quot;Newtonsche Iterations Vorschrift&quot;</li>
+    <li>\(\lim<em>{i</em>{\to\infty}}x_{i}=x^{\star}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>Je besser der Startwert, desto schneller die Konvergenz (quadratische Konvergenzordnung)<ul>
+    <li>Ist \)x\star\) eine einfache Nullstellevon \)f(x)\), dann ist das Newtonverfahren<ul>
+    <li>\(\epsilon<em>{i}=\left|x</em>{i}-x\star\right|\) =&gt; die Anzahl gültiger nachkommastellen verdoppelt sich bei jedem Schritt</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-partiele-integration-produktinegration-"><strong>Partiele Integration/Produktinegration</strong></h1>
+    <ul>
+    <li>\(\frac{d}{\mathrm{d}x}\left(u\left(x\right)\cdot v\left(x\right)\right)=u^{\prime}\left(x\right)\cdot v\left(x\right)+u\left(x\right)\cdot v^{\prime}\left(x\right)\) #Produktregel</li>
+    <li>\(\Rightarrow\int_{}^{}\left(u^{\prime}v+uv^{\prime}\right)\mathrm{d}x=u\cdot v+C\)</li>
+    <li>\(\int<em>{}^{}u^{\prime}\cdot vdx=u\cdot v-\int</em>{}^{}u\cdot v^{\prime}dx\)<ul>
+    <li>\(\int<em>{}^{}x\cdot e^{x}dx=x\cdot e^{x}-\int</em>{}^{}1\cdot e^{x}=\left(x-1\right)e^{x}+C\)</li>
+    <li>\(u=x\) \)u^{\prime}=1\)</li>
+    <li>\(v^{\prime}=e^{x}\) \)v=e^{x}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-satz-von-taylor-"><strong>Satz von Taylor</strong></h1>
+    <ul>
+    <li>(Brook Taylor, 1685-1731)</li>
+    <li>Ziel: Schwierige Funktionen durch einfache Polynome annähern</li>
+    <li>\(p_1\left(x\right)\) heißt <u>&quot;Taylor-Polynom&quot;</u> 1. Ordnung von f im Entwicklungspunkt \)x_0\)<ul>
+    <li>\(p_n\) hat mit \)f(x)\) im \)x_0\) gemeinsam<ul>
+    <li>gleicher Funktionswert \)p_1\left(x_0\right)=f\left(x_0\right)\) \)n=0\)</li>
+    <li>gleiche Steigung \)p_1\left(x_0\right)=f^{\prime}\left(x_0\right)\) \)n=1\)</li>
+    <li>gleiche Krümmung \)p_2\left(x_0\right)=f^{^{\prime\prime}}\left(x_0\right)\) \)n=2\)</li>
+    <li>gleiche Krümmungsrate \)p_3\left(x_0\right)=f^{\prime\prime\prime}\left(x_0\right)\) \)n=3\)</li>
+    </ul>
+    </li>
+    <li>\(p_{n}\left(x_0\right)=f\left(x_0\right)+f^{\prime}\left(x_0\right)\cdot\left(x-x_0\right)+\frac{f^{\prime\prime}\left(x_0\right)}{2}\cdot\left(x-x_0\right)^2+\frac{f^{\prime\prime\prime}\left(x_0\right)}{6}+\frac{f^{n^{\prime}}}{n!}\left(x_0\right)\cdot\left(x-x_0\right)^{n}\)</li>
+    <li>\(=\sum_{k=0}^{n}\frac{\frac{d^{k}}{\mathrm{d}x^{k}}f\left(x_0\right)}{k!}\cdot\left(x-x_0\right)^{k}\)</li>
+    </ul>
+    </li>
+    <li>Die Funktionen \)p_n\) bilden mit wachsendem n die Funktion f immer besser nach</li>
+    <li>Im Entwicklungspunkt \)p_0=0\) ist es die Taylor-Mclaurin Formel</li>
+    <li>Taylor schema</li>
+    <li><em>Anwendungen der Taylor-Polynome</em><ul>
+    <li>Funktionen wie \)\sqrt{x},\sin,\cos,\ln,e^{x},.\ldots\) können über die 4 Grundrechenarten entwickelt werden und mit belibiger genauigkeit berechnet werden.<ul>
+    <li>\(\sin\left(x\right)=x-\frac{x³}{3!}+\frac{x⁵}{5!}-\frac{x⁷}{7!}\)</li>
+    </ul>
+    </li>
+    <li>Euler Formel der komplexen Zahlen</li>
+    <li>Grenzwerte berechenen</li>
+    <li>Alternative zu L&#39;Hospital</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-ableiten-"><strong>Ableiten</strong></h1>
+    <ul>
+    <li><strong>Potenzregel</strong><ul>
+    <li>\(\frac{d}{\mathrm{d}x}x^{\alpha}=\alpha x^{\alpha-1}\)</li>
+    </ul>
+    </li>
+    <li><strong>Konstanter Faktor-Regel</strong><ul>
+    <li>\(\left(a\cdot f\left(x\right)\right)^{\prime}=a\cdot f\left(x\right)^{\prime}\)<ul>
+    <li>\(\frac{d}{\mathrm{d}x}\left(a\cdot f\left(x\right)\right)=a\cdot\frac{d}{\mathrm{d}x}f\left(x\right)\) #operatorenschreibweise</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><strong>Summenregel /Differenzenregel</strong><ul>
+    <li>Ableitung einer Summe = Summe der Ableitungen</li>
+    <li>\(\left(f\left(x\right)+g\left(x\right)\right)^{\prime}=f^{\prime}\left(x\right)+g^{\prime}\left(x\right)\)<ul>
+    <li>\(\frac{d}{\mathrm{d}x}\left(f\left(x\right)+g\left(x\right)\right)=\frac{d}{\mathrm{d}x}f\left(x\right)+\frac{d}{\mathrm{d}x}g\left(x\right)\) #operatorenschreibweise</li>
+    </ul>
+    </li>
+    <li>\(\frac{d}{\mathrm{d}x}\) ist ein <em>Linearer Operator</em></li>
+    </ul>
+    </li>
+    <li><strong>Produktregel</strong><ul>
+    <li>\(\left(f\left(x\right)\cdot g\left(x\right)\right)^{\prime}=f^{\prime}\left(x\right)\cdot g\left(x\right)+f\left(x\right)\cdot g^{\prime}\left(x\right)\)<ul>
+    <li>\(\frac{d}{\mathrm{d}x}\left(f\left(x\right)\cdot g\left(x\right)\right)=\frac{d}{\mathrm{d}x}f\left(x\right)\cdot g\left(x\right)+f\left(x\right)\cdot\frac{d}{\mathrm{d}x}g\left(x\right)\) #operatorenschreibweise</li>
+    <li>Bsp: \)\frac{d}{\mathrm{d}x}\left(x²\right)=\frac{d}{\mathrm{d}x}\left(x\cdot x\right)=\frac{d}{\mathrm{d}x}x\cdot x+x\cdot\frac{d}{\mathrm{d}x}x\)<ul>
+    <li>\(1\cdot x+x\cdot1=2x\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><strong>Kehrwertregel</strong><ul>
+    <li>\(\frac{d}{\mathrm{d}x}\frac{1}{f\left(x\right)}=\frac{-f^{\prime}\left(x\right)}{f²\left(x\right)}\)<ul>
+    <li>\(\frac{d}{\mathrm{d}x}\frac{1}{f\left(x\right)}=\lim_{h\to0}\frac{\frac{1}{f\left(x+h\right)}-\frac{1}{f\left(x\right)}}{h}=\)</li>
+    <li>\(\lim<em>{h\to0}\frac{1}{h}\left(\frac{f\left(x\right)-f\left(x+h\right)}{f\left(x+h\right)\cdot f\left(x\right)}\right)=\lim</em>{h\to0}\frac{f\left(x\right)-f\left(x+h\right)}{h}\cdot\frac{1}{f\left(x+h\right)\cdot f\left(x\right)}=\)</li>
+    <li>\(\lim_{h\to0}\left(-\frac{f\left(x+h\right)-f\left(x\right)}{h}\right)\cdot\frac{1}{f\left(x\right)\cdot f\left(x\right)}=\frac{-f^{\prime}\left(x\right)}{f²\left(x\right)}\)<ul>
+    <li>Bsp. \)\frac{d}{\mathrm{d}x}\frac{1}{1+x²}=\frac{-2x}{\left(1+x²\right)²}\) , \)\frac{d}{\mathrm{d}x}\frac{5}{2x+3}=5\cdot\frac{d}{\mathrm{d}x}\frac{1}{2x+3}=\frac{5\cdot-2}{\left(2x+3\right)²}=-\frac{10}{\left(2x+3\right)²}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><strong>Quotientenregel</strong><ul>
+    <li>\(\left(\frac{f}{g}\right)^{\prime}=\frac{f^{\prime}g-fg^{\prime}}{g²}\)<ul>
+    <li>Herleitung aus Kehrwertregel<ul>
+    <li>\(\left(\frac{f}{g}\right)^{\prime}=\left(f\cdot\frac{1}{g}\right)^{\prime}=f^{\prime}\cdot\frac{1}{g}+f\cdot\left(\frac{1}{g}\right)^{\prime}=\)</li>
+    <li>\(\frac{f^{\prime}}{g}+f\cdot\frac{-g^{\prime}}{g²}=\frac{f^{\prime}g-fg^{\prime}}{g²}\)<ul>
+    <li>Bsp \)\frac{d}{\mathrm{d}x}\frac{x}{x²+1}=\frac{d}{\mathrm{d}x}\left(x\cdot\frac{1}{x²+1}\right)=\frac{1\cdot\left(x²+1\right)-x\cdot2x}{\left(x²+1\right)²}=\frac{-x²+1}{\left(x²+1\right)²}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><strong>Kettenregel</strong> #Nachdifferenzieren<ul>
+    <li>von außen nach innen</li>
+    <li>\(y=f\left(x\right),x=x\left(t\right)\) y hängt indirekt von t ab.<ul>
+    <li>\(y\left(x\left(t\right)\right)=\left(f\circ x\right)\left(t\right)\)</li>
+    </ul>
+    </li>
+    <li>Regel: \)\frac{dy}{\mathrm{d}t}=\frac{dy}{\mathrm{d}x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}\)<ul>
+    <li>\(\frac{d}{\mathrm{d}t}y=f^{\prime}\left(x\left(t\right)\right)\cdot\dot{x}\)<ul>
+    <li>Bsp \)y\left(t\right)=\sqrt{3t^4+2}\)</li>
+    <li>\(\Rightarrow\dot{y}=\frac{\mathrm{d}y}{\mathrm{d}t}=\frac{dy}{\mathrm{d}x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}\)</li>
+    <li>\(\frac{1}{2\sqrt{3t^4+2}}\cdot12t³=\frac{6t³}{\sqrt{3t^4+2}}\)</li>
+    <li>\(f\left(x\right)=\left(x²+2x+3\right)^8\Rightarrow f^{\prime}\left(x\right)=8\left(x²+2x+3\right)^7\cdot\left(2x+2\right)\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><em>Schreibweisen</em><ul>
+    <li>\(f\left(x\right)=\ldots\Rightarrow f^{\prime}\left(x\right)=\ldots\)[[\)red]]====</li>
+    <li>\(x=\ldots\Rightarrow\frac{d}{\mathrm{d}x}x=\ldots\)</li>
+    </ul>
+    </li>
+    <li>\(f\left(x\right)=x^{n}\Rightarrow f^{\prime}\left(x\right)=x^{n-1}\)</li>
+    <li><em>Exponent kliener 1</em><ul>
+    <li>\(f\left(x\right)=x^{\frac13}\Rightarrow f^{\prime}\left(x\right)=\frac13x^{-\frac23}=\frac{1}{3\cdot\sqrt[3]{x^2}}\)</li>
+    </ul>
+    </li>
+    <li><strong>Brüche ableiten</strong><ul>
+    <li>\(f\left(x\right)=\frac{1}{x}=x^{-1}\Rightarrow f^{\prime}\left(x\right)=-1\cdot x^{-1-1}=-\frac{1}{x²}\)</li>
+    </ul>
+    </li>
+    <li><strong>Wurzeln ableiten</strong><ul>
+    <li>\(f\left(x\right)=\sqrt{x}\Rightarrow f^{\prime}\left(x\right)=\frac{1}{2\sqrt{x}}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-komplexe-zahlen-"><strong>Komplexe Zahlen</strong></h1>
+    <ul>
+    <li>\(i\coloneq\sqrt{-1}\)</li>
+    <li>\(z=a+ib\) \)\left\lbrace a\in\mathbb{R};b\in\mathbb{R}\right\rbrace\)</li>
+    <li>Multiplikation<ul>
+    <li>\(\left(a+bi\right)\cdot\left(c+di\right)=ac+adi+bic+iibd=ac-bd+adi+aci\)</li>
+    <li>\(R_1\cdot R_2\cdot e^{i\phi_1+\phi_2}\)</li>
+    <li>mit -1<ul>
+    <li>\(z\cdot-1=-a-ib\)</li>
+    <li>\(z=R\cdot e^{i\phi}\) || \)-1=1\cdot e^{i\pi}\)</li>
+    <li>\(=R\cdot e^{i\phi\pi}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>Realteil = \)\frac{z+\overline{z}}{2}\)</li>
+    <li>Imaginärzeil = \)\frac{z+\overline{z}}{2i}\)</li>
+    <li><em>Euler-Form</em> Polarform einer komlexen Zahl<ul>
+    <li>\(r\) Betrag von \)z=\left|z\right|\)<ul>
+    <li>\(\sqrt{a²+b²}=\sqrt{z\cdot\overline{z}}\)</li>
+    </ul>
+    </li>
+    <li>\(\phi\) Argument von \)z\) = arg \)z\)</li>
+    </ul>
+    </li>
+    <li><em>Umrechnung von Kartesicher Form in Polarform</em><ul>
+    <li>\(r=a²+b²\)</li>
+    <li>\(\phi=\tan⁻¹\left(\frac{b}{a}\right)\)<ul>
+    <li>für II Quadranten +180°oder + \)\pi\)</li>
+    <li>für III Quadranten -180°oder - \)\pi\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><em>Umrechnung von Polarform in Kartesische Form</em><ul>
+    <li>\(a=\cos\left(\phi\right)\cdot R\)</li>
+    <li>\(b=\sin\left(\phi\right)\cdot R\)</li>
+    </ul>
+    </li>
+    <li>\(a+ib=\sqrt{a²+b²}\cdot e^{i\arctan\left(\frac{b}{a}\right)}\)</li>
+    <li>\(R+\phi=R\cdot e^{i\phi}=R\left(\cos\phi+i\sin\phi\right)\)</li>
+    <li><em>Ableitung</em><ul>
+    <li>\(\frac{d}{\mathrm{d}x}e^{ix}=\frac{d}{\mathrm{dx}}\cos x+i\sin x\)<ul>
+    <li>\(-\sin x+i\cos x=i\left(\cos x+i\sin x\right)=ie^{ix}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><strong>Anwendung auf Polynome</strong><ul>
+    <li>\(p\left(x_0\right)=0\) Nullstelle von p</li>
+    <li>\(x²-4x+13=0\)<ul>
+    <li>\(\frac{-b\pm\sqrt{b²-4ac}}{2a}=\frac{4\pm\sqrt{-36}}{2}=\frac12\cdot\left(4\pm\sqrt{-1\cdot36}\right)=\frac12\cdot\left(4\pm i\cdot6\right)=2\pm3i\)</li>
+    <li>Ergebnis ist das Konjugiert komplexes Paar<ul>
+    <li>\(2+3i\land2-3i\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>Komplexe Nullstellen treten stets als Komplex Konjugierte Paare auf</li>
+    <li><strong>Abspalten eines Linearfaktors bei Polynomen</strong><ul>
+    <li>hat das Polynom p(x) von Grad n bei \)x_0\) eine Nullstelle (reel oder komplex), so kann man p(x) ohne Rest durch den Linearfaktor \)(x-x_0)\) dividieren:<ul>
+    <li>\(p\left(x\right)=\left(x-x_0\right)\cdot q\left(x\right)\)</li>
+    <li>von der Funktion p(x) mit Grad n wird durch das abspalten des Linafaktors \)(x-x_0)\) die Funktion q(x) mit dem Grad n-1</li>
+    </ul>
+    </li>
+    <li>\(x³-2x²+4x+7\)<ul>
+    <li>a) durch Versuche \)x_1=-1\)</li>
+    <li>b) spalte den Linearfaktor \)(x-x_0)=x-(-1)\) ab<ul>
+    <li>Polynomdivision \)x³-2x²+4x+7\div x+1=x²-3x+7\)</li>
+    <li>Miternachtsformel \)\frac{3\pm\sqrt{9-28}}{2}=\frac12\cdot\left(3\pm i\sqrt{19}\right)\)</li>
+    </ul>
+    </li>
+    <li>c) restliche Nullstellen finden</li>
+    </ul>
+    </li>
+    <li><em>Nullstellenform</em><ul>
+    <li>\(p\left(x\right)_{n}=\left(x-x_0\right)\cdot\left(x-x<em>1\right)\cdot\ldots\cdot\left(x-x</em>{n}\right)\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-polynome-"><strong>Polynome</strong></h1>
+    <ul>
+    <li>Ist der Grad n ungerade, muss es eine Reele Nullstelle haben
+    -</li>
+    </ul>
+    </li>
+    <li><h1 id="-euler-formel-"><strong>Euler-Formel</strong></h1>
+    <ul>
+    <li>\(e^{i\phi}=\cos\phi+i\sin\phi\)</li>
+    <li>\(e^{x}=\frac{x^0}{0!}+\frac{x^1}{1!}+\frac{x²}{2!}+\frac{x³}{3!}+\ldots\)<ul>
+    <li>\(e^{i\phi}=1+i\phi+\frac{\left(i\phi\right)²}{2!}+\frac{\left(i\phi\right)³}{3!}+\frac{\left(i\phi\right)^4}{4!}+\cdots\)</li>
+    <li>\(e^{i\phi}=1+i\phi-\frac{\phi²}{2!}-i\frac{\phi³}{3!}+\frac{\phi^4}{4!}+i\frac{\phi^5}{5!}-\cdots\)<ul>
+    <li>\(\operatorname{Re}=1-\frac{\phi²}{2!}+\frac{\phi^4}{4!}-\frac{\phi^6}{6!}+\cdots=\cos\phi\)</li>
+    <li>\(\operatorname{Im}=i\left(\phi-\frac{\phi³}{3!}+\frac{\phi^5}{5!}-\cdots\right)=\sin\phi\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(e_{}^{i(\phi_1+\phi_2)}=\cos\left(\phi_1+\phi_2\right)+i\cdot\sin\left(\phi_1+\phi2\right)=e^{i\phi_1}\cdot e^{i\phi_2}\)</li>
+    </ul>
+    </li>
+    <li><h1 id="-e-funktion-"><strong>e-Funktion</strong></h1>
+    <ul>
+    <li>\(\phi=\frac{b}{r}\)<ul>
+    <li>Winkel ist Bogen durch Radius</li>
+    </ul>
+    </li>
+    <li>Cosinus und Sinus im Einheitskreis</li>
+    </ul>
+    </li>
+    <li><h1 id="-logarithmus-"><strong>Logarithmus</strong></h1>
+    <ul>
+    <li>\(x=\ln y\leftrightarrows e^{x}=y\)</li>
+    <li>\(\ln x&lt;0\to0&lt;x&lt;1\)</li>
+    <li>\(\ln x=0\to x=1\)</li>
+    <li>\(\ln x&gt;0\to x&gt;1\)</li>
+    <li>\(\lim<em>{x\to0</em>{+}}\ln x=-\infty\)</li>
+    <li>\(\lim_{x\to\infty}\ln x=\infty\)</li>
+    <li>Funktionalgleichung<ul>
+    <li>\(\ln\left(x_1\cdot x_2\right)=\ln x_1+\ln x_2\)</li>
+    <li>\(\ln\left(\frac{x_1}{x_2}\right)=\ln x_1-\ln x_2\)</li>
+    </ul>
+    </li>
+    <li><em>Ableitung</em><ul>
+    <li>\(\frac{d}{\mathrm{d}x}\ln x=\frac{1}{x}=\ln|x|+C\)</li>
+    </ul>
+    </li>
+    <li><em>Aufleiten</em><ul>
+    <li>\(\int_{}^{}\frac{1}{x}\space dx=\ln x\)</li>
+    </ul>
+    </li>
+    <li><em>Wichtigkeit der ln Fukntion</em><ul>
+    <li>auflösen von Gleichungen, bei unbekannten im Exponenten
+    -
+    -</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-wurzeln-"><strong>Wurzeln</strong></h1>
+    <ul>
+    <li><strong>Teilweise wurzel ziehen</strong><ul>
+    <li>\(\sqrt{a\cdot b}=\sqrt{a}\cdot\sqrt{b}\)</li>
+    <li>\(\sqrt{\frac{a}{b}}=\frac{\sqrt{a}}{\sqrt{b}}\)</li>
+    </ul>
+    </li>
+    <li><strong>Wurzeln als exponenten darstellen</strong><ul>
+    <li>\(x^{\frac{m}{n}}=\sqrt[n]{x^{m}}=\left(\sqrt[n]{x}\right)^{x}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-matritzen-"><strong>Matritzen</strong></h1>
+    <ul>
+    <li><strong>Multiplikation</strong><ul>
+    <li>\(\left(m\times n\right)\cdot\left(n\times k\right)=\left(m\times k\right)\)<ul>
+    <li>\(\begin{bmatrix}8\space4\ 7\space6\end{bmatrix}\cdot\begin{bmatrix}3\ 9\end{bmatrix}=\begin{bmatrix}8\cdot3+4\cdot3\ 7\cdot9+6\cdot9\end{bmatrix}=\begin{bmatrix}36\ 117\end{bmatrix}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><strong>Typ</strong><ul>
+    <li>(Reihe x Spalte)</li>
+    <li><em>Quadratisch</em><ul>
+    <li>(n x n)</li>
+    </ul>
+    </li>
+    <li><em>Einnheitsmatrix</em><ul>
+    <li>\(\begin{pmatrix}1\space0\space0\ 0\space1\space0\ 0\space0\space1\end{pmatrix}\)</li>
+    </ul>
+    </li>
+    <li><em>Inverse Matrix</em><ul>
+    <li>\(\begin{pmatrix}a\space b\ c\space d\end{pmatrix}\cdot\begin{pmatrix}x\space y\ z\space w\end{pmatrix}=E_1\)</li>
+    <li>\(xa+yc=1|\cdot d\)</li>
+    <li>\(xb+yd=0|\cdot c\)<ul>
+    <li>\(xad+ycd=d\)</li>
+    <li>\(xbc+ycd=0\)<ul>
+    <li><em>subtrahieren</em></li>
+    <li>\(x\left(ad-bc\right)=d\Rightarrow x=\frac{d}{ad-bc}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>\(\Rightarrow y=\frac{-b}{ad-bc}\space\space z=\frac{-c}{ad-bc}\space\space w=\frac{a}{ad-bc}\)</li>
+    <li>\(\Rightarrow A⁻¹=\frac{1}{ad-bc}\begin{pmatrix}\space\space\space\space\space d\space-b\ -c\space\space\space\space\space a\end{pmatrix}\)</li>
+    <li>(3x3)</li>
+    <li><em>Nutzen</em><ul>
+    <li>Endprodukte von gegebener anzahl Rohstoffe</li>
+    </ul>
+    </li>
+    <li><strong>Determinante</strong><ul>
+    <li>Die Zahl ad-bc entscheidet, ob \)A⁻¹\) existiert oder nicht<ul>
+    <li>Det \)\neq\) 0<ul>
+    <li>heißt A ist regulär</li>
+    <li>\(A⁻¹\) existiert</li>
+    <li>Lösung eines LGS \)A\overrightarrow{x}=\overrightarrow{b}\) ist eindeutig \)\overrightarrow{x}=A⁻¹\overrightarrow{b}\)</li>
+    </ul>
+    </li>
+    <li>Det = 0<ul>
+    <li>heißt A ist singulär</li>
+    <li>\(A⁻¹\) existiert nicht</li>
+    <li>Lösung eines LGS \)A\overrightarrow{x}=\overrightarrow{b}\) ist nicht eindutig oder leer
+    -</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><em>(3x3) Matrizen</em><ul>
+    <li>\(A=\begin{pmatrix}a_1\space b_1\space c_1\ a_2\space b_2\space c_2\ a_3\space b_3\space c_3\end{pmatrix}\)</li>
+    <li>\(DetA=\left(\overrightarrow{a}\times\overrightarrow{b}\right)\cdot\overrightarrow{c}\)<ul>
+    <li>\(\left(\begin{pmatrix}a_1\ a_2\ a_3\end{pmatrix}\times\begin{pmatrix}b_1\ b_2\ b_3\end{pmatrix}\right)\cdot\begin{pmatrix}c_1\ c_2\ c_3\end{pmatrix}=a_2b_3c_1-a_3b_1c_1+a_3b_1c_2-a_1b_3c_2+a_1b_2c_3-a_2b_1c_3\)<ul>
+    <li>Eselsbrücke: Regel von Sarrus</li>
+    <li>\(\begin{pmatrix}a_1\space b_1\space c_1\ a_2\space b_2\space c_2\ a_3\space b_3\space c_3\end{pmatrix}\begin{pmatrix}a_1\space b_1\ a_2\space b_2\ a_3\space b_3\end{pmatrix}\)</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><h1 id="-lgs-"><strong>LGS</strong></h1>
+    <ul>
+    <li><h2 id="mit-inverser-matrix-bestimmen">Mit inverser Matrix Bestimmen</h2>
+    <ul>
+    <li><img src="../assets/image_1710783628521_0.png" alt="image.png"></li>
+    </ul>
+    </li>
+    <li><h2 id="cramersche-regel">Cramersche Regel</h2>
+    <ul>
+    <li><img src="../assets/image_1710783656077_0.png" alt="image.png"></li>
+    </ul>
+    </li>
+    <li><h2 id="gauss-eliminationsverfahren">Gauss-Eliminationsverfahren</h2>
+    <ul>
+    <li>Erweiterte Koeffizienten Matrix bilden<ul>
+    <li>\(\left(A|\overrightarrow{b}\right)\)</li>
+    </ul>
+    </li>
+    <li>3 Elementare Zeilenoperationen<ul>
+    <li>2 Zeilen vertauschen</li>
+    <li>Zeile mit Zahl \)\neq\) 0 multiplizieren</li>
+    <li>zu einer Zeile ein Vielfaches einer anderen Zeile hinzufügen</li>
+    <li><img src="../assets/image_1710783546875_0.png" alt="image.png">
+    -</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    

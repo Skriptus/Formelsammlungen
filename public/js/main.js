@@ -49,7 +49,7 @@ for(var key in Formeln){
     
   const clonebutton = Formelbutton.content.cloneNode(true);
   const new_button = clonebutton.querySelector(".Formelbutton");
-  new_button.textContent = Formeln[key][0]+","+Formeln[key][ii];
+  new_button.textContent = Formeln[key][ii];
   new_button.id = Formeln[key][0]+","+Formeln[key][ii];
   // Append the cloned content to the parent element
   document.getElementById(key).appendChild(new_button);

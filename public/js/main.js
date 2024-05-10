@@ -29,7 +29,7 @@ function AddFormel(FolderandFormel){
       x.parentElement.remove(); // Call the pre-defined function
     });
     // Add event listener for touch events
-    x.addEventListener("touchstart", function() {
+    x.addEventListener("touchend", function() {
       const i = x.id;
       const f = i.substring(0,i.length-1);
       document.getElementById(f).style.display = "";
@@ -41,7 +41,6 @@ function AddFormel(FolderandFormel){
 for(var key in Formeln){
   const clonecard = Formelcard.content.cloneNode(true);
   const new_card = clonecard.querySelector(".Formelcard");
-  new_card.textContent = Formeln[key][0];
   new_card.id = Formeln[key][0];
   // Append the cloned content to the parent element
   Main.appendChild(new_card);
@@ -58,7 +57,7 @@ for(var key in Formeln){
     AddFormel(new_button.id); // Call the pre-defined function
   });
   // Add event listener for touch events
-  new_button.addEventListener("touchstart", function() {
+  new_button.addEventListener("touchend", function() {
     AddFormel(new_button.id); // Call the pre-defined function
   });
 };};

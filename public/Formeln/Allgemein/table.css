@@ -1,30 +1,42 @@
+body{
+  background-color: #E0E0E0;
+}
 h1{
     font-size: 30px;
-    color: #fff;
+    color: #c91414;
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
     margin-bottom: 15px;
   }
   table{
+    margin-left: auto;
+    margin-right: auto;
     width:auto;
     table-layout: fixed;
   }
+  tr:nth-child(odd) {
+    background-color: lightblue; /* Light gray for odd rows */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #c3ffc3; /* Very light gray for even rows */
+  }
   .tbl-header{
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgb(193, 18, 18);
    }
   .tbl-content{
     height:300px;
     overflow-x:auto;
     margin-top: 0px;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(14, 210, 37, 0.3);
   }
   th{
     padding: 20px 15px;
     text-align: left;
     font-weight: 500;
     font-size: 12px;
-    color: #fff;
+    color: #a81187;
     text-transform: uppercase;
   }
   td{
@@ -33,7 +45,7 @@ h1{
     vertical-align:middle;
     font-weight: 300;
     font-size: 12px;
-    color: #fff;
+    color: #270b81;
     border-bottom: solid 1px rgba(255,255,255,0.1);
   }
   

@@ -22,6 +22,14 @@ function AddFormel(FolderandFormel){
     const x = cloneFormel.querySelector(".X");
     x.id = Formel+"x";
     document.getElementById(Formel[0]).prepend(cloneFormel);
+
+    var link = document.createElement( "Formeln\table.css" );
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.media = "screen,print";
+
+    cloneFormel.getElementsByTagName( "head" )[0].appendChild( link );
+
     x.addEventListener("click", function() {
       const i = x.id;
       const f = i.substring(0,i.length-1);

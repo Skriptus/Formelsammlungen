@@ -8,17 +8,19 @@
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
+  <link rel="stylesheet" href="table.css">
+  
 </head>
 <body>
 <ul>
     <li><h1 id="-vibration-"><strong>Vibration</strong></h1>
     <ul>
-    <li>\(f=\) #Frequenz [\)Hz=\frac{1}{s}\)] \)=\frac{\omega}{2\pi}\)</li>
-    <li>\(\mathrm{T}=\) #Periode [\)s\)] \)=\frac{1}{f}\)</li>
-    <li>\(\gamma=\) #Dämpfung  \)=\frac{\mu}{2m}\)</li>
-    <li>\(\tau=\) #Abklingzeit \)=\frac{1}{\gamma}\)</li>
-    <li>\(\omega=\) #Kreisfrequenz [\)\frac1s\)] \)=\sqrt{\omega_0²-\gamma}\)</li>
-    <li>\(\Lambda=\) #log.Dekrement \)=\gamma\mathrm{T}\)</li>
+    <li>\(f=\) # [ \( Hz=\frac{1}{s}\)] \(=\frac{\omega}{2\pi}\)</li>
+    <li>\(\mathrm{T}=\) #Periode [\(s\)] \(=\frac{1}{f}\)</li>
+    <li>\(\gamma=\) #Dämpfung  \(=\frac{\mu}{2m}\)</li>
+    <li>\(\tau=\) #Abklingzeit \(=\frac{1}{\gamma}\)</li>
+    <li>\( \omega=\) #Kreisfrequenz [\(\frac1s\)] \(=\sqrt{\omega_0²-\gamma}\)</li>
+    <li>\(\Lambda=\) #log.Dekrement \(=\gamma\mathrm{T}\)</li>
     <li><strong>Herleitung</strong><ul>
     <li><strong>Bewegungsgleichung</strong><ul>
     <li>\(m\ddot{x}=-kx\)</li>
@@ -46,18 +48,18 @@
     </ul>
     </li>
     <li>minus unter der Wurzel mit \)i\) Lösen<ul>
-    <li>\(\lambda_{1,2}=\pm\sqrt{i²\frac{k}{m}}=\pm i\sqrt{\frac{k}{m}}\coloneqq\pm i\omega\)</li>
+    <li>\(\lambda_{1,2}=\pm\sqrt{i²\frac{k}{m}}=\pm i\sqrt{\frac{k}{m}}=q\pm i\omega\)</li>
     </ul>
     </li>
     </ul>
     </li>
     <li>Lösung als Ansatz für zwei Lösungen der DGl<ul>
     <li>\(x_1\left(t\right)=e^{\lambda_1 t}=e^{i\omega t}\)<ul>
-    <li>\(\Rightarrow z\coloneq x_1\left(t\right)\)</li>
+    <li>\(\Rightarrow z= x_1\left(t\right)\)</li>
     </ul>
     </li>
     <li>\(x_2\left(t\right)=e^{\lambda_2 t}=e^{i\omega t}\)<ul>
-    <li>\(\Rightarrow z\star\coloneq x_2\left(t\right)\)</li>
+    <li>\(\Rightarrow z\star= x_2\left(t\right)\)</li>
     </ul>
     </li>
     </ul>
@@ -68,11 +70,9 @@
     </li>
     <li><em>umwandlung in reale Zahlen</em><ul>
     <li>\(A=B=\frac12\to x\left(t\right)=\frac12\left(e^{i\omega t}+e^{-i\omega t}\right)\)<ul>
-    <li><img src="../assets/image_1703624505668_0.png" alt="image.png">{:height 197, :width 225}</li>
     </ul>
     </li>
     <li>\(A=-B=\frac{1}{2i}\to x\left(t\right)=\frac{1}{2i}\left(e^{i\omega t}-e^{-i\omega t^{}}\right)\)<ul>
-    <li><img src="../assets/image_1703624521553_0.png" alt="image.png">{:height 199, :width 221}</li>
     </ul>
     </li>
     <li><em>allgemeine Lösung</em><ul>
@@ -213,9 +213,9 @@
     <li>\(p=p_{s}+p_0\)</li>
     </ul>
     </li>
-    <li><strong>Druck</strong> \)p\coloneq\frac{F}{A}\)</li>
-    <li><strong>Dichte</strong> \)\rho\coloneq\frac{m}{V}\)</li>
-    <li>Energie \)E\coloneq pV\)<ul>
+    <li><strong>Druck</strong> \)p=\frac{F}{A}\)</li>
+    <li><strong>Dichte</strong> \)\rho=\frac{m}{V}\)</li>
+    <li>Energie \)E= pV\)<ul>
     <li>\(\Delta E=Fs=pAs=pV\)</li>
     </ul>
     </li>
@@ -241,9 +241,9 @@
     <li>Irreversibel</li>
     </ul>
     </li>
-    <li>\(\sigma\coloneq\frac{F}{A}\)</li>
-    <li>\(\tau\coloneq\frac{F}{A}\)</li>
-    <li>\(\mu\coloneq-\frac{\Delta d}{d}\cdot\frac{l}{\Delta l}\)</li>
+    <li>\(\sigma=\frac{F}{A}\)</li>
+    <li>\(\tau=\frac{F}{A}\)</li>
+    <li>\(\mu=-\frac{\Delta d}{d}\cdot\frac{l}{\Delta l}\)</li>
     <li>\(\epsilon<em>{x}=\frac{1}{E}\sigma</em>{x}-\mu\left(\sigma<em>{y}-\sigma</em>{z}\right)+\alpha\Delta T\)</li>
     <li>\(\epsilon<em>{y}=\frac{1}{E}\sigma</em>{y}-\mu\left(\sigma<em>{x}-\sigma</em>{z}\right)+\alpha\Delta T\)</li>
     <li>\(\epsilon<em>{z}=\frac{1}{E}\sigma</em>{z}-\mu\left(\sigma<em>{x}-\sigma</em>{y}\right)+\alpha\Delta T\)</li>

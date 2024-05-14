@@ -30,21 +30,26 @@ function AddFormel(FolderandFormel){
       const i = x.id;
       const f = i.substring(0,i.length-1);
       document.getElementById(f).style.display = "";
-      x.parentElement.remove(); // Call the pre-defined function
-      console.log(Main2.children);
+      setTimeout(() => {
+        x.parentElement.remove(); // Call the pre-defined function
       if (Main2.children.length == 1){
         title.style.display = "";
       };
+      }, 20);
+      
     });
     // Add event listener for touch events
     x.addEventListener("touchend", function() {
       const i = x.id;
       const f = i.substring(0,i.length-1);
       document.getElementById(f).style.display = "";
-      x.parentElement.remove();
+      setTimeout(() => {
+        x.parentElement.remove(); // Call the pre-defined function
       if (Main2.children.length == 1){
         title.style.display = "";
-      };});
+      };
+      }, 20);
+    });
     
   }
 };
@@ -66,11 +71,15 @@ for(var key in Formeln){
   document.getElementById(key).appendChild(new_button);
   // Add event listener for click events
   new_button.addEventListener("click", function() {
-    AddFormel(new_button.id); // Call the pre-defined function
+    setTimeout(() => {
+      AddFormel(new_button.id);
+    }, 20);
   });
   // Add event listener for touch events
   new_button.addEventListener("touchend", function() {
-    AddFormel(new_button.id); // Call the pre-defined function
+    setTimeout(() => {
+      AddFormel(new_button.id);
+    }, 20);
   });
 };};
 

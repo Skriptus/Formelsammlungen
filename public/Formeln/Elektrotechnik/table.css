@@ -1,9 +1,9 @@
 body{
-  background-color: #E0E0E0;
+  background-color: #006769;
 }
 h1{
     font-size: 30px;
-    color: #c91414;
+    color: #40A578;
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
@@ -16,20 +16,20 @@ h1{
     table-layout: fixed;
   }
   tr:nth-child(odd) {
-    background-color: lightblue; /* Light gray for odd rows */
+    background-color: #9DDE8B; /* Light gray for odd rows */
   }
   
   tr:nth-child(even) {
     background-color: #c3ffc3; /* Very light gray for even rows */
   }
   .tbl-header{
-    background-color: rgb(193, 18, 18);
+    background-color: #006769;
    }
   .tbl-content{
     height:300px;
     overflow-x:auto;
     margin-top: 0px;
-    border: 1px solid rgba(14, 210, 37, 0.3);
+    border: 1px solid #E6FF94;
   }
   th{
     padding: 20px 15px;

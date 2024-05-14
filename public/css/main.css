@@ -10,18 +10,17 @@ body{
          url('playfairdisplay.woff') format('woff');
   }
 #container{
-    background-color: coral;
+    background-color: #006769;
     width: 98vw;
     height: 98vh;
     margin: 1vh 1vw;
     overflow-x: scroll; /* Enable horizontal scrolling */
     scroll-snap-type: x mandatory; /* Snap to positions on x-axis */
-    border: solid rgb(199, 0, 0) 3px;
     display: flex;
 }
 
 .Main{
-    background-color: aqua;
+    background-color: #40A578;
     border-radius: 15px;
     margin: 1vh 1vh;
     min-width: 95vw;
@@ -31,6 +30,10 @@ body{
     display: flex;
     overflow-x: auto;
     align-items: center;
+}
+#Main2{
+    display: flex;
+    flex-direction: column;
 }
 p{
     writing-mode: vertical-lr;
@@ -43,8 +46,7 @@ p{
 }
 .Formelcard{
     border-radius: 30px;
-    background-color: blueviolet;
-    border: solid 3px rgb(227, 0, 0);
+    background-color: #9DDE8B;
     height: calc(100% - 30px);
     margin: 10px;
     display: flex;
@@ -54,13 +56,14 @@ p{
 }
 .Formelbutton{
     border-radius: 30px;
-    background-color: darkorange;
+    background-color: #E6FF94;
     height: fit-content;
     margin: 10px;
     width: calc(100% - 20px);
+    border: transparent;
 }
 iframe{
-    background-color: rgb(160, 103, 34);
+    background-color: #006769(160, 103, 34);
     border: none;
     overflow: visible;
     height: 100%;
@@ -70,13 +73,14 @@ iframe{
     width: 100%;
 }
 .Formeliframe{
-    background-color: rgb(30, 0, 255);
+    background-color: #9DDE8B(30, 0, 255);
     width: 100%;
     height: 100%;
 }
 .X{
-    background-color: rgb(0, 255, 68);
+    background-color:#E6FF94;
     border-radius: 30px;
     width: calc(100% - 10px);
-    margin: 15px 5px;
+    margin: 5px 5px;
+    border: transparent;
 }

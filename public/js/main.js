@@ -24,7 +24,7 @@ function countVisibleChildren(element) {
 function AddFormel(FolderandFormel){
   var Formel = FolderandFormel.split(",");
   var element =  document.getElementById(Formel[1]+"Formel");
-  if (element == null){
+  if (element == null && Main2.children.length < 3){
     const Formelb = document.getElementById(FolderandFormel);
     Formelb.style.display = "none";
     if(countVisibleChildren(Formelb.parentElement) == 0){

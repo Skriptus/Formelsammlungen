@@ -1,5 +1,5 @@
 
-const Formeln = {'Allgemein':['Allgemein','Grichisches Alphabet'],'Chemie':['Chemie'],
+const Formeln = {'Allgemein':['Allgemein','Grichisches Alphabet','Konstanten'],'Chemie':['Chemie'],
 'Elektrotechnik':['Elektrotechnik'],'Mathe':['Mathe','Stochastik'],
 'Physik': ['Physik','Gase','Thermodynamik']}
 const Formelcard = document.getElementById("Formelcard");
@@ -10,12 +10,26 @@ const Main = document.getElementById("Main");
 const Main2 = document.getElementById("Main2");
 const title = document.getElementById("title");
 
+function countVisibleChildren(element) {
+  let visibleCount = 0;
+  for (const child of element.children) {
+    const style = window.getComputedStyle(child);
+    if (style.display !== 'none' && style.visibility !== 'hidden') {
+      visibleCount++;
+    }
+  }
+  return visibleCount;
+}
+
 function AddFormel(FolderandFormel){
   var Formel = FolderandFormel.split(",");
   var element =  document.getElementById(Formel[1]+"Formel");
   if (element == null){
     const Formelb = document.getElementById(FolderandFormel);
     Formelb.style.display = "none";
+    if(countVisibleChildren(Formelb.parentElement) == 0){
+      Formelb.parentElement.style.display = "none";
+    }
     title.style.display = "none";
     const cloneFormel = Formeltemp.content.cloneNode(true);
     const new_formel = cloneFormel.querySelector(".Formel");
@@ -30,6 +44,7 @@ function AddFormel(FolderandFormel){
       const i = x.id;
       const f = i.substring(0,i.length-1);
       document.getElementById(f).style.display = "";
+      document.getElementById(f).parentElement.style.display = "";
       setTimeout(() => {
         x.parentElement.remove(); // Call the pre-defined function
       if (Main2.children.length == 1){
@@ -43,6 +58,7 @@ function AddFormel(FolderandFormel){
       const i = x.id;
       const f = i.substring(0,i.length-1);
       document.getElementById(f).style.display = "";
+      document.getElementById(f).parentElement.style.display = "";
       setTimeout(() => {
         x.parentElement.remove(); // Call the pre-defined function
       if (Main2.children.length == 1){

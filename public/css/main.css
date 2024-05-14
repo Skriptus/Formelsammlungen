@@ -4,15 +4,42 @@ body{
     overflow: hidden;
     background-color: black;
 }
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('playfairdisplay.woff2') format('woff2'),
+         url('playfairdisplay.woff') format('woff');
+  }
+#container{
+    background-color: coral;
+    width: 98vw;
+    height: 98vh;
+    margin: 1vh 1vw;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to positions on x-axis */
+    border: solid rgb(199, 0, 0) 3px;
+    display: flex;
+}
+
 .Main{
     background-color: aqua;
-    margin: 30px;
-    height: calc(100vh - 60px);
-    border-radius: 30px;
-    display: grid;
-    grid-auto-flow: column;
+    border-radius: 15px;
+    margin: 1vh 1vh;
+    min-width: 95vw;
+    width: fit-content;
+    height: 95vh;
+    scroll-snap-align: start;
+    display: flex;
     overflow-x: auto;
-    overflow-y: hidden;
+    align-items: center;
+}
+p{
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Vertically center content */
+    font-family: 'Comic Sans MS', serif, bold;
+    font-size: 38px;
 }
 .Formelcard{
     border-radius: 30px;
@@ -23,7 +50,6 @@ body{
     display: flex;
     flex-direction: column;
     place-items: center;
-    width: 45vw;
 
 }
 .Formelbutton{

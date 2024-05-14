@@ -7,6 +7,8 @@ const Formelbutton = document.getElementById("Formelbutton");
 const Formeltemp = document.getElementById("Formel");
 
 const Main = document.getElementById("Main");
+const Main2 = document.getElementById("Main2");
+const title = document.getElementById("title");
 
 function AddFormel(FolderandFormel){
   var Formel = FolderandFormel.split(",");
@@ -14,6 +16,7 @@ function AddFormel(FolderandFormel){
   if (element == null){
     const Formelb = document.getElementById(FolderandFormel);
     Formelb.style.display = "none";
+    title.style.display = "none";
     const cloneFormel = Formeltemp.content.cloneNode(true);
     const new_formel = cloneFormel.querySelector(".Formel");
     new_formel.src = "Formeln/"+Formel[0]+"/"+Formel[1]+".html";
@@ -21,27 +24,28 @@ function AddFormel(FolderandFormel){
     
     const x = cloneFormel.querySelector(".X");
     x.id = Formel+"x";
-    document.getElementById(Formel[0]).prepend(cloneFormel);
-
-    var link = document.createElement( "Formeln\table.css" );
-    link.type = "text/css";
-    link.rel = "stylesheet";
-    link.media = "screen,print";
-
-    cloneFormel.getElementsByTagName( "head" )[0].appendChild( link );
+    Main2.prepend(cloneFormel);
 
     x.addEventListener("click", function() {
       const i = x.id;
       const f = i.substring(0,i.length-1);
       document.getElementById(f).style.display = "";
       x.parentElement.remove(); // Call the pre-defined function
+      console.log(Main2.children);
+      if (Main2.children.length == 1){
+        title.style.display = "";
+      };
     });
     // Add event listener for touch events
     x.addEventListener("touchend", function() {
       const i = x.id;
       const f = i.substring(0,i.length-1);
       document.getElementById(f).style.display = "";
-      x.parentElement.remove();});
+      x.parentElement.remove();
+      if (Main2.children.length == 1){
+        title.style.display = "";
+      };});
+    
   }
 };
 

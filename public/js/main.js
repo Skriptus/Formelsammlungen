@@ -39,7 +39,9 @@ function AddFormel(FolderandFormel){
     const x = cloneFormel.querySelector(".X");
     x.id = Formel+"x";
     Main2.prepend(cloneFormel);
-
+    var styleSheet = document.createElement("style")
+    styleSheet.src = "css/table.css"
+    console.log(document.getElementById(Formel[1]+"Formel").innerHTML);
     x.addEventListener("click", function() {
       const i = x.id;
       const f = i.substring(0,i.length-1);
@@ -64,7 +66,7 @@ function AddFormel(FolderandFormel){
       if (Main2.children.length == 1){
         title.style.display = "";
       };
-      }, 20);
+      }, 250);
     });
     
   }
@@ -95,7 +97,7 @@ for(var key in Formeln){
   new_button.addEventListener("touchend", function() {
     setTimeout(() => {
       AddFormel(new_button.id);
-    }, 20);
+    }, 250);
   });
 };};
 

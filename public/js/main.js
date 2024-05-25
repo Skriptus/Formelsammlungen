@@ -1,7 +1,3 @@
-
-const Formeln = {'Allgemein':['Allgemein','Grichisches Alphabet','Konstanten'],'Chemie':['Chemie'],
-'Elektrotechnik':['Elektrotechnik'],'Mathe':['Mathe','Stochastik'],
-'Physik': ['Physik','Gase','Thermodynamik']}
 const Formelcard = document.getElementById("Formelcard");
 const Formelbutton = document.getElementById("Formelbutton");
 const Formeltemp = document.getElementById("Formel");
@@ -41,7 +37,6 @@ function AddFormel(FolderandFormel){
     Main2.prepend(cloneFormel);
     var styleSheet = document.createElement("style")
     styleSheet.src = "css/table.css"
-    console.log(document.getElementById(Formel[1]+"Formel").innerHTML);
     x.addEventListener("click", function() {
       const i = x.id;
       const f = i.substring(0,i.length-1);
@@ -72,19 +67,22 @@ function AddFormel(FolderandFormel){
   }
 };
 
-
-for(var key in Formeln){
+function fill(dataMap){
+  let keys = [ ...dataMap.keys()];
+for(var i in keys){
+  var key = keys[i];
+  var dataarray = dataMap.get(key)
   const clonecard = Formelcard.content.cloneNode(true);
   const new_card = clonecard.querySelector(".Formelcard");
-  new_card.id = Formeln[key][0];
+  new_card.id = key;
   // Append the cloned content to the parent element
   Main.appendChild(new_card);
-  for (let ii=0; ii<Formeln[key].length;ii++){
-    
-  const clonebutton = Formelbutton.content.cloneNode(true);
-  const new_button = clonebutton.querySelector(".Formelbutton");
-  new_button.textContent = Formeln[key][ii];
-  new_button.id = Formeln[key][0]+","+Formeln[key][ii];
+  for (let ii=0; ii<dataarray.length;ii++){
+    const clonebutton = Formelbutton.content.cloneNode(true);
+    const new_button = clonebutton.querySelector(".Formelbutton");
+    const Formeldata = new Map(Object.entries(dataarray[ii]));
+    new_button.textContent = key;
+    new_button.id = key;
   // Append the cloned content to the parent element
   document.getElementById(key).appendChild(new_button);
   // Add event listener for click events
@@ -99,6 +97,19 @@ for(var key in Formeln){
       AddFormel(new_button.id);
     }, 250);
   });
-};};
+};};}
 
 
+fetch('Formeln.json')
+  .then(response => {
+    // Check if the request was successful
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json(); // Parse the JSON data
+  })
+  .then(data => {
+
+    const dataMap = new Map(Object.entries(data));
+    fill(dataMap);
+});

@@ -4,6 +4,7 @@ body {
     width: 100vw;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
   }
   #container{
     background-color: #006769;

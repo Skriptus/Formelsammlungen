@@ -28,7 +28,7 @@ body{
     overflow-x: scroll; /* Enable horizontal scrolling */
     scroll-snap-type: x mandatory; /* Snap to positions on x-axis */
     display: flex;
-    overflow-y: hidden;
+    overflow-y: auto;
     margin-right: 50px;
 }
 #Main2{

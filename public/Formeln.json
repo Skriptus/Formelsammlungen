@@ -1,0 +1,5 @@
+{
+    "Konstanten" : [
+        {"Symbol" : "c" , "Wert": "299792458" , "Einheit":"fracms", "Beschreibung": "Lichtgeschwindigkeit im Vakuum"}
+    ],"Formeln":[]
+}

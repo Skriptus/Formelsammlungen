@@ -1,5 +1,39 @@
 {
     "Konstanten" : [
-        {"Symbol" : "c" , "Wert": "299792458" , "Einheit":"fracms", "Beschreibung": "Lichtgeschwindigkeit im Vakuum"}
-    ],"Formeln":[]
+        {"Symbol" : "c" , "Wert": "299792458" , "Einheit":"?fracms", "Beschreibung": "Lichtgeschwindigkeit im Vakuum"},
+        {"Symbol" : "g" , "Wert": "9.807{,}448" , "Einheit":"?frac{m}{s^2}", "Beschreibung": "Erdbeschleunigung in München"}
+    ],
+    "Formeln":[
+        {"Formel" : "A ?cdot s = C", "Einheit":"?frac{m}{s^2}", "Beschreibung": "Ladung"},
+        {"Formel" : "?overrightarrow{ F }=?frac{ 1 }{ 4 ?pi ?varepsilon}", "Einheit":"N", "Beschreibung": "Culombkraft"},
+        {"Formel" : "F = m ?cdot a ~(g)", "Einheit":"N", "Beschreibung": "Beschleunigung"},
+        {"Formel" : "U_q = I_q ?cdot R_i", "Einheit":"V", "Beschreibung": "Ersatzquellenspannung"},
+        {"Formel" : "R_i = ?cdot ?frac{ 1 }{ G_i }", "Einheit":"", "Beschreibung": ""}
+
+    ],
+    "SI-Einheiten":[
+        {"Name" : "Meter", "Einheit": "m", "Beschreibung": "Länge"},
+        {"Name" : "Kilogramm", "Einheit": "kg", "Beschreibung": "Gewicht"},
+        {"Name" : "Sekunde", "Einheit": "s", "Beschreibung": "Zeit"},
+        {"Name" : "Ampere", "Einheit": "A", "Beschreibung": "Strom"},
+        {"Name" : "Kelvin", "Einheit": "K", "Beschreibung": "Temperatur"},
+        {"Name" : "Mol", "Einheit": "mol", "Beschreibung": "Stoffmenge"},
+        {"Name" : "Candela", "Einheit": "cd", "Beschreibung": "Lichtstärke"}
+    ],
+    "Variabelen" : {
+        "s" :{ "Einheit": "m", "Beschreibung": "Distanz"},
+        "m" :{ "Einheit": "kg", "Beschreibung": "Masse"},
+        "t" :{ "Einheit": "s", "Beschreibung": "Zeit"},
+        "I" :{ "Einheit": "A", "Beschreibung": "Strom"},
+        "T" :{ "Einheit": "K", "Beschreibung": "Temperatur"},
+        "mol" :{ "Einheit": "Mol", "Beschreibung": "Mol"},
+        "cd" :{ "Einheit": "cd", "Beschreibung": "Candela"},
+        "F" :{ "Einheit": "N", "Beschreibung": "Kraft"},
+        "a" :{ "Einheit": "?frac{m}{s^2}", "Beschreibung": "Beschleunigung"},
+        "A" :{ "Einheit": "m^2", "Beschreibung": "Kraft"},
+        "C" :{ "Einheit": "As", "Beschreibung": "elektrische Ladung"},
+        "Q" :{ "Einheit": "As", "Beschreibung": "Culomb"},
+        "?pi" :{ "Einheit": "-", "Beschreibung": "Pi"},
+        "?epsilon" :{ "Einheit": "?frac{1}{N}", "Beschreibung": "epsilon"}
+    }
 }

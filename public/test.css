@@ -1,0 +1,62 @@
+
+/* override browser default */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* use viewport-relative units to cover page fully */
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* include border and padding in element width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* full-sized  container that fills up the page */
+#Container {
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+
+  /* example padding, font-size, background, etc */
+  padding: 10px;
+  font-size: 20px;
+  background-color: lightskyblue;
+}
+#Formeln{
+    display: flex;
+    flex-flow: column wrap;
+    height: 100%;
+    border: 3px green solid;
+}
+.explosive{
+    scale: 0%;
+    position: absolute;
+    background-color: burlywood;
+    transition-duration: 2s;
+    padding: 15px;
+}
+#Formeln:hover > #explosive{
+    scale: 100%;
+}
+.Formel:hover{
+    background-color: orchid;
+    flex-grow: 5.0;
+}
+.Formel{
+    border: 1px solid black;
+    flex-grow: 1.0;
+    transition: 1s;
+}
+#hidden{
+    display: none;
+}
+.p{
+    text-align: center;
+    height: 100%;
+}

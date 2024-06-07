@@ -4,7 +4,7 @@
         {"Symbol" : "g" , "Wert": "9.807{,}448" , "Einheit":"?frac{ m }{ s^2 }", "Beschreibung": "Erdbeschleunigung in München", "Bereiche": ["Kinematic"]},
         {"Symbol" : "R" , "Wert": "8.31" , "Einheit":"?frac{ J }{ mol ?cdot K }", "Beschreibung": "Allgemeine Gaskonstante", "Bereiche": ["Thermodynamik"]},
         {"Symbol" : "N_A" , "Wert": "6.022 ?cdot 10^{23}" , "Einheit":"?frac{ 1 }{ mol }", "Beschreibung": "Avogado Konstante", "Bereiche": ["Thermodynamik"]},
-        {"Symbol" : "k" , "Wert": "1.38 ?cdot 10^{-23}" , "Einheit":"?frac{J}{K}", "Beschreibung": "Bolzmann Konstante", "Bereiche": ["Thermodynamik"]},
+        {"Symbol" : "k_B" , "Wert": "1.38 ?cdot 10^{-23}" , "Einheit":"?frac{J}{K}", "Beschreibung": "Bolzmann Konstante", "Bereiche": ["Thermodynamik"]},
         {"Symbol" : "c_{Wasser}" , "Wert": "4.18" , "Einheit":"?frac{J}{g ?cdot K}", "Beschreibung": "Spezifische Wärmekapazität", "Bereiche": ["Thermodynamik"]},
         {"Symbol" : "e" , "Wert": "1.602 ?cdot 10^{-19}" , "Einheit":"C", "Beschreibung": "Elementarladung", "Bereiche": ["Elektrostatik"]},
         {"Symbol" : "?varepsilon_0" , "Wert": "8.854 ?cdot 10^{-12}" , "Einheit":"?frac{ C^2 }{ N ?cdot m^2 }", "Beschreibung": "Elektrische Feldkonstante", "Bereiche": ["Elektrostatik","Elektrotechnik"]},

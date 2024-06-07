@@ -17,7 +17,7 @@
         {"Formel" : "?overrightarrow{ F }=?frac{ 1 }{ 4 ?pi ?varepsilon _0}", "Einheit":"N", "Beschreibung": "Culombkraft", "Bereiche": ["Elektrotechnik"]},
         {"Formel" : "F = m ?cdot a ~(g)", "Einheit":"N", "Beschreibung": "Beschleunigung", "Bereiche": ["Kinematic"]},
         {"Formel" : "U_q = I_q ?cdot R_i", "Einheit":"V", "Beschreibung": "Ersatzquellenspannung", "Bereiche": ["Elektrotechnik"]},
-        {"Formel" : "R_i = ?cdot ?frac{ 1 }{ G_i }", "Einheit":"", "Beschreibung": "", "Bereiche": ["Elektrotechnik"]},
+        {"Formel" : "R_i = ?cdot ?frac{ 1 }{ G_i }", "Einheit":"?Omega", "Beschreibung": "Widerstand und Leitwert", "Bereiche": ["Elektrotechnik"]},
         {"Formel" : "?frac{p ?cdot V}{T} = const.", "Einheit":"?frac{Pa ?cdot m^3}{K}", "Beschreibung": "Allgemeine Gasgleichung", "Bereiche": ["Thermodynamik"]},
         {"Formel" : "?frac{p ?cdot V}{T} = ?nu ?cdot R ?cdot T", "Einheit":"", "Beschreibung": "Zustandsgleichung eines idealen Gases", "Bereiche": ["Thermodynamik"]},
         {"Formel" : "?Delta l = l_0 ?cdot ?alpha ?cdot ?Delta T", "Einheit":"m", "Beschreibung": "Themische Ausdehnung", "Bereiche": ["Thermodynamik"]},

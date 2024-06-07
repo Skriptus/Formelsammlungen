@@ -1,66 +1,74 @@
 
 const Formeln = document.getElementById("Formeln");
-const explosive = document.getElementById("explosive");
-const hidden = document.getElementById("hidden");
 var dataMap = 0;
 var Variabelenmap = 0;
 var Formelnarray = 0;
 var Konstantenmap = 0;
 var SImap = 0;
-var hiddenarray = {};
 const delayInMilliseconds = 1000;
 
-function fillexplosive(variable){
-  var vari = hiddenarray[variable];
-  explosive.appendChild(vari);
+function createhead(Bereich){
+  if(document.getElementById(Bereich) == null){
+    var headdiv = document.createElement("div");
+    headdiv.id = Bereich + "h1";
+    var head = document.createElement("h1");
+    head.innerText = Bereich;
+    headdiv.appendChild(head);
+    Formeln.appendChild(headdiv);
+    var fdiv = document.createElement("div");
+    fdiv.id = Bereich;
+    fdiv.classList = "fdiv";
+    headdiv.appendChild(fdiv);
+  }
 }
 
 function Fill(Formel){
+  Formel.Bereiche.forEach((Bereich) => createhead(Bereich));
   var Formula_div = document.createElement("div");
   Formula_div.classList = "Formel";
   var parts = Formel["Formel"].split(" ");
   var Variabelenarray =[];
   var Formula_l = Formel.Formel.replaceAll("?","\\");
-  var Beschreibung = Formel.Beschreibung;
   var Formula_p = document.createElement("p");
+  var h2 = document.createElement("h3");
+  h2.classList = "head2";
+  h2.innerText = Formel.Beschreibung;
+  Formula_div.appendChild(h2);
   var alt_b = Formula_l.indexOf("~(");
   var alt_e = Formula_l.substring(alt_b,Formula_l.length).indexOf(")")+alt_b;
   var alt = Formula_l.substring(alt_b+2,alt_e);
+ 
+  var Formula = "\\( "+ Formula_l.replaceAll(Formula_l.substring(alt_b,alt_e+1),"") + " \\)";
+  Formula_p.innerText = Formula;
+  Formula_p.classList.add("p"+Variabelenarray);
+  Formula_div.appendChild(Formula_p);
+  var hidbox = document.createElement("div");
+  hidbox.classList = "hidbox";
+  Formula_div.appendChild(hidbox);
   for (let i = 0; i < parts.length; i++) {
     if (Variabelenmap.has(parts[i])){
       Variabelenarray.push(parts[i]);
       var Variabele = Variabelenmap.get(parts[i]);
-      if(document.getElementById(parts[i])==null){
-        hiddenarray[parts[i]] = document.createElement("p");  
-        hiddenarray[parts[i]].id = parts[i];
-        hiddenarray[parts[i]].innerHTML=" \\( "+parts[i].replace("?","\\")+" \\)"+" = "+Variabele.Beschreibung+" \\( "+" ["+Variabele.Einheit.replace("?","\\")+" ]"+" \\)";
-        hidden.appendChild(hiddenarray[parts[i]]);
-        }
+      var hid  = document.createElement("p");  
+      hid.classList = "hidden"
+      hid.innerHTML=" \\( "+parts[i].replaceAll("?","\\")+" \\)"+" = "+Variabele.Beschreibung+" \\( "+" ["+Variabele.Einheit.replaceAll("?","\\")+" ]"+" \\)";
+      hidbox.appendChild(hid);
       } 
       };
-    var Formula = "\\( "+ Formula_l.replace(Formula_l.substring(alt_b,alt_e+1),"") + " \\)";
-    Formula_p.innerText = Formula;
-    Formula_p.classList.add("p,"+Variabelenarray);
-    Formula_div.appendChild(Formula_p);
-    Formeln.appendChild(Formula_div);
-    Formula_div.addEventListener("mouseenter", (event) => {
-      
-        var x = event.clientX,
-            y = event.clientY;
-            explosive.style.top = (y + 20) + 'px';
-            explosive.style.left = (x + 20) + 'px';
-            explosive.replaceChildren();
-            var h1 = document.createElement('h1');
-            h1.appendChild(document.createTextNode(Beschreibung));
-            explosive.appendChild(h1);
-            Variabelenarray.forEach((element) => fillexplosive(element));
-    });
-    Formula_div.addEventListener("mousemove", (event) => {
-      var x = event.clientX,
-          y = event.clientY;
-          explosive.style.top = (y + 20) + 'px';
-          explosive.style.left = (x + 20) + 'px';
-  });}
+  Formel.Bereiche.forEach((Bereich) => document.getElementById(Bereich).appendChild(Formula_div));
+}
+
+function fillK(Konstante){
+  Konstante.Bereiche.forEach((Bereich) => createhead(Bereich));
+  var Konst = document.createElement("div");
+  Konst.classList = "konstdiv";
+  var konsthead = document.createElement("h2");
+  konsthead.classList = "konsthead"
+  konsthead.innerText =  Konstante.Beschreibung;
+  Konst.innerText = "\\( "+ Konstante.Symbol.replaceAll("?","\\") + "=" + Konstante.Wert.replaceAll("?","\\") + Konstante.Einheit.replaceAll("?","\\") +  " \\) ";
+  Konst.prepend(konsthead);
+  Konstante.Bereiche.forEach((Bereich) => document.getElementById(Bereich).prepend(Konst));
+}
 
 fetch('Formeln.json')
   .then(response => {
@@ -76,7 +84,8 @@ fetch('Formeln.json')
         Formelnarray = new Map(Object.entries(data["Formeln"])); 
         Konstantenmap = new Map(Object.entries(data["Konstanten"]));
         SImap = new Map(Object.entries(data["SI-Einheiten"]));
-        Formelnarray.forEach((Formel) => Fill(Formel))})
+        Formelnarray.forEach((Formel) => Fill(Formel))
+        Konstantenmap.forEach((Konstante) => fillK(Konstante));});
         
           
 

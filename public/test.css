@@ -4,6 +4,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: #EF9C66;
+  overflow-x: hidden;
 }
 
 /* use viewport-relative units to cover page fully */
@@ -12,51 +14,89 @@ body {
   width: 100vw;
 }
 
-/* include border and padding in element width and height */
-* {
-  box-sizing: border-box;
-}
-
 /* full-sized  container that fills up the page */
-#Container {
-  padding: 15px;
-  height: 100%;
-  width: 100%;
-
-  /* example padding, font-size, background, etc */
-  padding: 10px;
-  font-size: 20px;
-  background-color: lightskyblue;
-}
 #Formeln{
-    display: flex;
-    flex-flow: column wrap;
-    height: 100%;
-    border: 3px green solid;
+  padding: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50px;
+  margin-bottom: 50px;
 }
-.explosive{
-    scale: 0%;
-    position: absolute;
-    background-color: burlywood;
-    transition-duration: 2s;
-    padding: 15px;
+.Formel:hover > .hidbox{
+    opacity: 100%;
+    height: auto;
+    font-size: 25px;
 }
-#Formeln:hover > #explosive{
-    scale: 100%;
+.Formel:hover > .head2{
+  opacity: 100%;
+  height: auto;
+  font-size: 45px;
 }
 .Formel:hover{
-    background-color: orchid;
-    flex-grow: 5.0;
+  flex: 1.2;
+  background: #C8CFA0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 30px;
 }
 .Formel{
-    border: 1px solid black;
-    flex-grow: 1.0;
-    transition: 1s;
-}
-#hidden{
-    display: none;
+  transition: 1s;
+  flex: 1;
+  background: #FCDC94;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 3rem;
+  color: black;
+
 }
 .p{
     text-align: center;
-    height: 100%;
+}
+.head2{
+  transition: 1s;
+  opacity: 0%;
+  font-size: 0px;
+  text-align: center;
+}
+.hidbox{
+  transition: 1s;
+  opacity: 0%;
+  padding-right: 100px;
+  font-size: 0px;
+  text-align: right;
+}
+.konsthead{
+  font-size: 0px;
+  transition: 1s;
+}
+.konstdiv{
+  transition: 1s;
+  text-align: center;
+  background: #FCDC94;
+  margin-top: 0px;
+}
+.konstdiv:hover{
+  margin-bottom: 10px;
+  background: #C8CFA0;
+  border-radius: 30px;
+}
+.konstdiv:hover > .konsthead{
+  padding-top: 10px;
+  font-size: 15px;
+}
+h1{
+  text-align: center;
+  border-radius: 30px;
+  background: #78ABA8;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.fdiv{
+  border-radius: 30px;
+  overflow: hidden;
 }

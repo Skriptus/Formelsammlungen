@@ -28,12 +28,12 @@ body {
 .Formel:hover > .hidbox{
     opacity: 100%;
     height: auto;
-    font-size: 25px;
+    font-size: 12px;
 }
 .Formel:hover > .head2{
   opacity: 100%;
   height: auto;
-  font-size: 45px;
+  font-size: 15px;
 }
 .Formel:hover{
   flex: 1.2;
@@ -50,12 +50,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 3rem;
+  font-size: auto;
   color: black;
-
+  text-wrap: auto;
 }
 .p{
     text-align: center;
+    font-size: auto;
 }
 .head2{
   transition: 1s;
@@ -93,8 +94,8 @@ h1{
   text-align: center;
   border-radius: 30px;
   background: #78ABA8;
-  margin-left: 50px;
-  margin-right: 50px;
+  font-size: auto;
+  text-wrap: auto;
 }
 .fdiv{
   border-radius: 30px;

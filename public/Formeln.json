@@ -4,12 +4,12 @@
         {"Symbol" : "g" , "Wert": "9.807{,}448" , "Einheit":"?frac{ m }{ s^2 }", "Beschreibung": "Erdbeschleunigung in München", "Bereiche": ["Kinematik"]},
         {"Symbol" : "R" , "Wert": "8.31" , "Einheit":"?frac{ J }{ mol ?cdot K }", "Beschreibung": "Allgemeine Gaskonstante", "Bereiche": ["Thermodynamik"]},
         {"Symbol" : "N_A" , "Wert": "6.022 ?cdot 10^{23}" , "Einheit":"?frac{ 1 }{ mol }", "Beschreibung": "Avogado Konstante", "Bereiche": ["Thermodynamik"]},
-        {"Symbol" : "k" , "Wert": "1.38 ?cdot 10^{-23}" , "Einheit":"?frac{J}{K}", "Beschreibung": "Bolzmann Konstante", "Bereiche": ["Thermodynamik"]},
+        {"Symbol" : "k_B" , "Wert": "1.38 ?cdot 10^{-23}" , "Einheit":"?frac{J}{K}", "Beschreibung": "Bolzmann Konstante", "Bereiche": ["Thermodynamik"]},
         {"Symbol" : "c_{Wasser}" , "Wert": "4.18" , "Einheit":"?frac{J}{g ?cdot K}", "Beschreibung": "Spezifische Wärmekapazität", "Bereiche": ["Thermodynamik"]},
         {"Symbol" : "e" , "Wert": "1.602 ?cdot 10^{-19}" , "Einheit":"C", "Beschreibung": "Elementarladung", "Bereiche": ["Elektrostatik"]},
         {"Symbol" : "?varepsilon_0" , "Wert": "8.854 ?cdot 10^{-12}" , "Einheit":"?frac{ C^2 }{ N ?cdot m^2 }", "Beschreibung": "Elektrische Feldkonstante", "Bereiche": ["Elektrostatik","Elektrotechnik"]},
         {"Symbol" : "?mu_0" , "Wert": "4 ?pi ?cdot 10^{-7}" , "Einheit":"?frac{ V ?cdot s }{ A ?cdot m}", "Beschreibung": "Magnetische Feldkonstante", "Bereiche": ["Elektrostatik"]},
-        {"Symbol" : "?frac{ e }{ m_{el}}" , "Wert": "1.755{,}88 ?cdot 10^{11}" , "Einheit":"?frac{ C }{ kg }", "Beschreibung": "", "Bereiche": ["Elektrostatik"]}
+        {"Symbol" : "?frac{ e }{ m_{el}}" , "Wert": "1.755{,}88 ?cdot 10^{11}" , "Einheit":"?frac{ C }{ kg }", "Beschreibung": "Spezifische Ladung des Elektrons", "Bereiche": ["Elektrostatik"]}
         
     ],
     "Formeln":[
@@ -17,7 +17,7 @@
         {"Formel" : "?overrightarrow{ F }=?frac{ 1 }{ 4 ?pi ?varepsilon _0}", "Einheit":"N", "Beschreibung": "Culombkraft", "Bereiche": ["Elektrotechnik"]},
         {"Formel" : "F = m ?cdot a ~(g)", "Einheit":"N", "Beschreibung": "Beschleunigung", "Bereiche": ["Kinematik"]},
         {"Formel" : "U_q = I_q ?cdot R_i", "Einheit":"V", "Beschreibung": "Ersatzquellenspannung", "Bereiche": ["Elektrotechnik"]},
-        {"Formel" : "R_i = ?cdot ?frac{ 1 }{ G_i }", "Einheit":"", "Beschreibung": "", "Bereiche": ["Elektrotechnik"]},
+        {"Formel" : "R_i = ?frac{ 1 }{ G_i }", "Einheit":"?Omega", "Beschreibung": "Widerstand und Leitwert", "Bereiche": ["Elektrotechnik"]},
         {"Formel" : "?frac{p ?cdot V}{ T } = const.", "Einheit":"?frac{Pa ?cdot m^3}{K}", "Beschreibung": "Allgemeine Gasgleichung", "Bereiche": ["Thermodynamik"]},
         {"Formel" : "?frac{p ?cdot V}{ T } = ?nu ?cdot R ?cdot T", "Einheit":"", "Beschreibung": "Zustandsgleichung eines idealen Gases", "Bereiche": ["Thermodynamik"]},
         {"Formel" : "?Delta l = l_0 ?cdot ?alpha ?cdot ?Delta T", "Einheit":"m", "Beschreibung": "Themische Ausdehnung", "Bereiche": ["Thermodynamik"]},

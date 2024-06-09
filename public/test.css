@@ -101,3 +101,11 @@ h1{
   border-radius: 30px;
   overflow: hidden;
 }
+.unit{
+  text-align: center;
+  transition: 1s;
+  font-size: 0px;
+}
+.Formel:hover .unit{
+  font-size: 20px;
+}

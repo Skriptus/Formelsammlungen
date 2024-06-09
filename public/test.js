@@ -28,6 +28,7 @@ function Fill(Formel){
   Formula_div.classList = "Formel";
   var parts = Formel["Formel"].split(" ");
   var Variabelenarray =[];
+  var Konstarray = [];
   var Formula_l = Formel.Formel.replaceAll("?","\\");
   var Formula_p = document.createElement("p");
   var h2 = document.createElement("h3");
@@ -44,14 +45,37 @@ function Fill(Formel){
   Formula_div.appendChild(Formula_p);
   var hidbox = document.createElement("div");
   hidbox.classList = "hidbox";
+  var unit = document.createElement("p");
+  unit.classList = "unit";
+  unit.innerText = " \\( " + Formel.Einheit.replaceAll("?","\\")+" \\) ";
+  hidbox.appendChild(unit)
   Formula_div.appendChild(hidbox);
   for (let i = 0; i < parts.length; i++) {
-    if (Variabelenmap.has(parts[i])){
+    if (parts[i][0] == "~" && parts[i][1] != "("){
+      var Ko = parts[i].substring(1);
+      Konstarray.push(parts[i]);
+      var Kon = Konstantenmap.get(Ko);
+      var hid  = document.createElement("p");  
+      hid.classList = "hidden";
+      hid.innerHTML= Kon.Beschreibung + " \\( "+ Kon.Symbol.replaceAll("?","\\") + "=" + Kon.Wert.replaceAll("?","\\") + Kon.Einheit.replaceAll("?","\\") +  " \\) ";
+      hidbox.appendChild(hid);
+    }
+    else if (parts[i][0] == "~" && parts[i][1] == "("){
+      var Ko = parts[i].substring(2,parts[i].length-1);
+      Konstarray.push(parts[i]);
+      var Kon = Konstantenmap.get(Ko);
+      var hid  = document.createElement("p");  
+      hid.classList = "hidden";
+      hid.innerHTML= "gängig für " +" \\( "+parts[i-1].replaceAll("?","\\")+ " :" +  "\\)" +"<br>"+ Kon.Beschreibung + " \\( "+ Kon.Symbol.replaceAll("?","\\") + "=" + Kon.Wert.replaceAll("?","\\") + Kon.Einheit.replaceAll("?","\\") +  " \\) ";
+      hidbox.appendChild(hid);
+    }
+    else if (Variabelenmap.has(parts[i]) && !(Variabelenarray.includes(parts[i]))){
       Variabelenarray.push(parts[i]);
       var Variabele = Variabelenmap.get(parts[i]);
+      console.log(" ["+" \\( "+Variabele.Einheit.replaceAll("?","\\")+" \\)"+" ]");
       var hid  = document.createElement("p");  
       hid.classList = "hidden"
-      hid.innerHTML=" \\( "+parts[i].replaceAll("?","\\")+" \\)"+" = "+Variabele.Beschreibung+" \\( "+" ["+Variabele.Einheit.replaceAll("?","\\")+" ]"+" \\)";
+      hid.innerHTML=" \\( "+parts[i].replaceAll("?","\\")+" = "+Variabele.Beschreibung+" \\)";
       hidbox.appendChild(hid);
       } 
       };

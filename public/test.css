@@ -103,7 +103,7 @@ h1{
 }
 .unit{
   text-align: center;
-  transition: 1s;
+  transition: 1.5s;
   font-size: 0px;
 }
 .Formel:hover .unit{

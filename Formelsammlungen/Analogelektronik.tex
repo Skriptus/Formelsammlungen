@@ -1,0 +1,293 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{circuitikz}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\geometry{a4paper, margin=0.5cm}
+\fontsize{8pt}{0}
+
+
+
+\title{Analogelektronik}
+
+\author{Michael Korn}
+\titlespacing*{\section}{0pt}{0.1\baselineskip}{0.2\baselineskip}
+\begin{document}
+\maketitle
+\begin{multicols}{4}
+    Ohmsches Gesetzt
+    \begin{align*}
+        U &= R \cdot I \\
+        R &= \frac{U}{I} \\
+        I &= \frac{U}{R} \\
+        R &= \frac{1}{G} 
+    \end{align*}
+    
+    Leistung
+    \begin{align*}
+        P &= U \cdot I \\
+        P &= R \cdot I^2 \\
+        P &= \frac{U^2}{R}
+    \end{align*}
+    
+    Regeln
+    \begin{align*}
+        Knoten \\
+        \sum I_{in} = \sum I_{out} \\
+        Maschen \\
+        \sum U = 0
+    \end{align*}
+
+    RC-Tiefpass
+    \begin{align*}
+        H &= \frac{1}{\sqrt{1+(\frac{f}{f_c})^2}} \\
+        f_c &= \frac{1}{2\pi RC} \\
+        H[db] &= 20\cdot log(H) \\
+        -3db &= \frac{1}{\sqrt{2}}\cdot H
+    \end{align*}
+    
+\end{multicols} 
+
+\section*{Halbleiter}
+\begin{multicols}{3}
+    Materialspezifisch
+    \begin{align*}
+        R &= \rho \cdot \frac{l}{A} \\
+        G &= \sigma \cdot \frac{A}{l}
+    \end{align*}
+
+    Elekonen \& Loecher
+    \begin{align*}
+        n_0 &= p_0 = n_i \\
+        n_i &= n_{i0}(\frac{T}{T_0})^{\frac32}e^{\frac{W_g}{2kT_0}}e^{\frac{W_g}{2kT}} \\
+        n&+N_A = p+N_D
+    \end{align*}
+
+    Donatoren \& Akzeptoren
+    \begin{align*}
+        n\cdot p &= n_i^2 \\
+        n_p\cdot p_n &= n_i^2 \\
+        n_n\cdot p_n &= n_i^2 
+    \end{align*}
+
+\end{multicols} 
+\subsection*{Diffusion}
+\begin{minipage}[t]{0.451\textwidth}
+    \begin{equation*}
+        j_{Feld}=e\cdot n?p?\cdot \nu=e\cdot n\cdot \mu\cdot E=\sigma\cdot E
+    \end{equation*}
+    \begin{equation*}
+        j_{Diff} = e\cdot D\cdot \frac{dn?dp?}{dx}
+    \end{equation*}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+    \begin{equation*}
+        I=A\cdot e\cdot E\cdot (n\cdot\mu_n+p\cdot\mu_p)
+    \end{equation*}
+    \begin{equation*}
+        D=\mu\cdot\frac{k_BT}{e}
+    \end{equation*}
+    \begin{equation*}
+        j_{Ges} = j_{Feld}+j_{Diff}=e\cdot D\cdot\frac{dn?dp?}{dx}+e\cdot n?p?\cdot\mu\cdot E
+    \end{equation*}
+\end{minipage}
+Dabei bezeichnen:
+\begin{multicols}{3}
+\begin{itemize}
+    \item $\mu$: Ladungsträgerbeweglichkeit
+    \item $\sigma$: spezifische Leifähigkeit
+    \item $\nu$: Driftgeschwindigkeit
+    \item $n?p?$: Ladungsträgerdichte
+    \item $D$: Diffusionskonstante für Locher oder Elektronen
+\end{itemize}
+\end{multicols}
+
+\section*{Dioden}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{equation*}
+    I_D = I_S \cdot (e^{\frac{U}{n \cdot U_T}} - 1)
+\end{equation*}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{equation*}
+    I_S = I_S(T_0)\cdot e^{(\frac{T}{T_0}-1)\cdot \frac{U_g}{n\cdot U_T}}\cdot (\frac{T}{T_0})^{\frac{x}{n}}
+\end{equation*}
+\end{minipage}
+
+\begin{minipage}[t]{0.4\textwidth}
+\begin{equation*}
+    U_G=\frac{W_G}{e}=1.12V
+\end{equation*}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{equation*}
+        g_d=\frac{I}{n\cdot U_T}=\frac1{r_D}
+    \end{equation*}
+    \end{minipage}
+wobei:
+\begin{itemize}
+    \begin{multicols}{3}
+    \item $x\approx3$
+    \item $U_G$: Bandlückens
+    \item $I_D$: Diodenstrom
+    \item $I_S$: Sättigungsstrom
+    \item $n$: Emissionskoeffizient
+    \item $U_T = \frac{k \cdot T}{q}$: Temperaturspannung
+    \item $\approx I_S \cdot (e^{\frac{U}{n \cdot U_T}})$\\ für $U>4\cdot U_T$
+    \item $g_d$: Kleinsignalleitwert
+    \end{multicols} 
+\end{itemize}
+
+\begin{minipage}[t]{0.6\textwidth}
+    \subsection*{Temperaturspannung}
+    \begin{equation*}
+        U_T = \frac{k_B \cdot T}{e} \approx 26 \, \text{mV bei } T = 300 \, \text{K}
+    \end{equation*}
+    wobei:
+    \begin{itemize}
+        \begin{multicols}{2}
+        \item $k$: Boltzmann TR:25 in J
+        \item $k_B$: $8.617\cdot 10^{-5}\frac{eV}{K}$
+        \item $T$: Absolute Temperatur in Kelvin
+        \item $1J=6.2415\cdot 10^{18}eV$
+        \end{multicols}
+    \end{itemize}
+\end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+    \subsection*{weitere Dioden}
+    \begin{itemize}
+        \item Zener
+        \item Schoty
+        \item Fotodiode
+        \item LED
+    \end{itemize}
+
+\end{minipage}
+
+\section*{Bipolare Transistoren (BJT)}
+\begin{minipage}[t]{0.5\textwidth}
+    \subsection*{Stromverhältnisse}
+        \begin{align*}
+            I_C &= \beta \cdot I_B \\
+            I_E &= I_C + I_B \\
+            I_E &= (\beta + 1) \cdot I_B
+        \end{align*}
+    
+\end{minipage}% % be sure not to leave a blank line
+\begin{minipage}[t]{0.5\textwidth}
+\subsection*{Kleinsignal}
+    \begin{align*}
+        g_m &= \frac{I_C}{U_T} \\
+        r_\pi &= \frac{\beta}{g_m} \\
+        r_o &= \frac{U_A}{I_C}
+    \end{align*}
+    wobei:
+    \begin{itemize}
+        \item $g_m$: Steilheit
+        \item $r_\pi$: Basis-Emitter-Widerstand
+        \item $r_o$: Ausgangswiderstand
+        \item $U_A$: Early-Spannung
+    \end{itemize}
+\end{minipage}
+\subsection*{Verstärkung in verschiedenen Schaltungen}
+\begin{itemize}
+    \item \textbf{Emitterschaltung:} $V_u \approx -g_m \cdot R_C$ (bei großem $r_o$ und $R_E = 0$)
+    \item \textbf{Kollektorschaltung (Emitterfolger):} $V_u \approx 1$
+    \item \textbf{Basisschaltung:} $V_u \approx g_m \cdot R_C$
+\end{itemize}
+wobei $R_C$ der Kollektorwiderstand ist.
+
+\subsection*{Early-Effekt}
+Steilheit im aktiven Bereich
+\begin{equation*}
+    \frac{I_c}{U_{EA}}
+\end{equation*}
+\section*{MOSFETs}
+
+\subsection*{Grundlagen}
+MOSFETs gibt es in zwei Haupttypen:
+\begin{itemize}
+    \item \textbf{n-Kanal MOSFET:} Leitet bei positiver Gate-Source-Spannung.
+    \item \textbf{p-Kanal MOSFET:} Leitet bei negativer Gate-Source-Spannung.
+\end{itemize}
+
+\subsection*{Strom-Spannungs-Beziehungen}
+\begin{itemize}
+    \item \textbf{Abschnitt (Cut-off):} $I_D = 0$ für $V_{GS} < V_{TH}$
+    \item \textbf{Linearer Bereich (Triodenbereich):} $I_D = \mu_n C_{ox} \frac{W}{L} [(V_{GS} - V_{TH})V_{DS} - \frac{1}{2}V_{DS}^2]$ für $V_{GS} > V_{TH}$ und $V_{DS} < V_{GS} - V_{TH}$
+    \item \textbf{Sättigungsbereich (Aktivbereich):} $I_D = \frac{1}{2} \mu_n C_{ox} \frac{W}{L} (V_{GS} - V_{TH})^2$ für $V_{GS} > V_{TH}$ und $V_{DS} \ge V_{GS} - V_{TH}$
+\end{itemize}
+wobei:
+\begin{itemize}
+    \item $\mu_n$: Beweglichkeit der Elektronen
+    \item $C_{ox}$: Kapazität des Gate-Oxids pro Fläche
+    \item $W$: Breite des Kanals
+    \item $L$: Länge des Kanals
+    \item $V_{TH}$: Schwellenspannung
+\end{itemize}
+
+\subsection*{Kleinsignalparameter}
+\begin{itemize}
+    \item \textbf{Steilheit:} $g_m = \frac{\partial I_D}{\partial V_{GS}} = \mu_n C_{ox} \frac{W}{L} (V_{GS} - V_{TH})$ (im Sättigungsbereich)
+\end{itemize}
+
+\section*{Operationsverstärker (OPV)}
+
+\subsection*{Idealer OPV}
+\begin{itemize}
+    \item Unendlich hohe Eingangs-Impedanz
+    \item Null Ausgangs-Impedanz
+    \item Unendlich hohe Verstärkung
+\end{itemize}
+
+\subsection*{Realer OPV}
+\begin{itemize}
+    \item \textbf{Eingangsruhestrom (Bias Current):} $I_B$
+    \item \textbf{Eingangs-Offsetspannung:} $V_{OS}$
+    \item \textbf{Verstärkung mit offenem Regelkreis (Open-Loop Gain):} $A_{OL}$ (endlich)
+    \item \textbf{Gleichtaktunterdrückung (CMRR)} 
+    \item Common-Mode Rejection Ratio :Verhältnis der Diffverstärkung zur Gleichtaktverstärkung.
+    \item \textbf{Bandbreite:} Frequenzbereich, in dem die Verstärkung des OPVs nicht wesentlich abfällt.
+    \item \textbf{Slew Rate:} Maximale Änderungsgeschwindigkeit der Ausgangsspannung.
+\end{itemize}
+
+
+\subsection*{Invertierender Verstärker}
+
+\begin{equation*}
+    V = -\frac{R_2}{R_1}
+\end{equation*}
+
+\subsection*{Nicht-invertierender Verstärker}
+
+\begin{equation*}
+    V = 1 + \frac{R_2}{R_1}
+\end{equation*}
+
+\subsection*{Weitere wichtige OPV-Schaltungen}
+\begin{itemize}
+    \item \textbf{Differenzverstärker:} $V_{out} = \frac{R_2}{R_1}(V_2 - V_1)$ (wenn $R_1 = R_3$ und $R_2 = R_4$)
+    \item \textbf{Integrierer:} $V_{out}(t) = -\frac{1}{RC} \int V_{in}(t) dt$
+    \item \textbf{Differenzierer:} $V_{out}(t) = -RC \frac{dV_{in}(t)}{dt}$
+\end{itemize}
+
+\section*{Wechselstromanalyse (AC)}
+
+\subsection*{Impedanz}
+\begin{align*}
+    Z_R &= R \\
+    Z_C &= \frac{1}{j\omega C} \\
+    Z_L &= j\omega L
+\end{align*}
+wobei:
+\begin{itemize}
+    \item $\omega = 2\pi f$: Kreisfrequenz
+    \item $j$: Imaginäre Einheit
+\end{itemize}
+
+\end{document}

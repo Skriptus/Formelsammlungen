@@ -170,124 +170,148 @@ wobei:
 \end{minipage}
 
 \section*{Bipolare Transistoren (BJT)}
-\begin{minipage}[t]{0.5\textwidth}
+\begin{minipage}[t]{0.33\textwidth}
     \subsection*{Stromverhältnisse}
         \begin{align*}
             I_C &= \beta \cdot I_B \\
+            I_{C,aktiv} &= B_N\cdot I_B\cdot(1+\frac{U_{CE}}{U_{EA}})\\
             I_E &= I_C + I_B \\
-            I_E &= (\beta + 1) \cdot I_B
+            I_E &= (\beta + 1) \cdot I_B\\
+            I_B &= I_{BS}\cdot e^{\frac{U_{BE}}{U_T}}\\
+            U_{BE} &= 26mV\cdot ln(\frac{I_B}{I_{BS}})
         \end{align*}
-    
-\end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-\subsection*{Kleinsignal}
-    \begin{align*}
-        g_m &= \frac{I_C}{U_T} \\
-        r_\pi &= \frac{\beta}{g_m} \\
-        r_o &= \frac{U_A}{I_C}
-    \end{align*}
+    \end{minipage}
+    \begin{minipage}[t]{0.33\textwidth}    
+    \subsection*{Kleinsignal}
+        \begin{align*}
+            g_m &= \frac{I_C}{U_T} \\
+            r_\pi &= \frac{\beta}{g_m} \\
+            r_o &= \frac{U_A}{I_C}\\
+            i_c &= g_m\cdot u_{BE}\\
+            A = \frac{u_{aus}}{u_{ein}} &= -g_m\cdot \frac{R_C\cdot r_0}{R_C + r_0}
+        \end{align*}
+    \end{minipage}
+    \begin{minipage}[t]{0.33\textwidth}
     wobei:
     \begin{itemize}
         \item $g_m$: Steilheit
+        \item $\beta = B_N$: Verstärkung
         \item $r_\pi$: Basis-Emitter-Widerstand
         \item $r_o$: Ausgangswiderstand
-        \item $U_A$: Early-Spannung
+        \item $U_A$: Early-Spannung \\(Steilheit im aktiven Bereich)
+        \item $A$: Kleinsignalverstärkung
     \end{itemize}
 \end{minipage}
-\subsection*{Verstärkung in verschiedenen Schaltungen}
+\subsection*{Arbeitspunkt}
 \begin{itemize}
-    \item \textbf{Emitterschaltung:} $V_u \approx -g_m \cdot R_C$ (bei großem $r_o$ und $R_E = 0$)
-    \item \textbf{Kollektorschaltung (Emitterfolger):} $V_u \approx 1$
-    \item \textbf{Basisschaltung:} $V_u \approx g_m \cdot R_C$
+    \item $I_B = \frac{U_{CC}-U_{BE}}{R_B}\approx\frac{U_{CC}-0.7V}{R_B}$
+    \item $I_C = \frac{U_{CC}-U_a}{R_C}$
+    \item Spannungsverstärkung :$0.5V < U_e = U_C <0.7V$
 \end{itemize}
-wobei $R_C$ der Kollektorwiderstand ist.
-
-\subsection*{Early-Effekt}
-Steilheit im aktiven Bereich
-\begin{equation*}
-    \frac{I_c}{U_{EA}}
-\end{equation*}
 \section*{MOSFETs}
 
 \subsection*{Grundlagen}
-MOSFETs gibt es in zwei Haupttypen:
-\begin{itemize}
-    \item \textbf{n-Kanal MOSFET:} Leitet bei positiver Gate-Source-Spannung.
-    \item \textbf{p-Kanal MOSFET:} Leitet bei negativer Gate-Source-Spannung.
-\end{itemize}
+\begin{minipage}[t]{0.33\textwidth}
+    \subsection*{Gundlagen}
+        \begin{align*}
+            C &= \frac{\varepsilon_0\cdot\varepsilon_r}{t_{ox}}\cdot W\cdot L \\
+            &= C_{ox}\cdot W\cdot L\\
+            I_D &\propto (U_{GS}-U_{TH})^2\\
+            U_{DS} &= U_{GS}-U_{TH}\\
+            \lambda &= \frac{1}{U_{EA}}
+        \end{align*}
+    \end{minipage}
+    \begin{minipage}[t]{0.43\textwidth}
+    \subsection*{Kennlinien}
+        \begin{align*}
+            &\text{Linearer Bereich }\space U_{DS}<< U_{GS}-U_{TH}\\
+            I_D &= \mu\cdot C_{ox}\cdot \frac{W}{L}\cdot[(U_{GS}-U_{TH})\cdot U_{DS}-\frac12 U_{DS}^2]\\
+            & \approx \mu \cdot C_{ox}\cdot \frac{W}{L} (U_{GS}-U_{TH})\cdot U_{DS} \\
+            &\text{Sättigungsbereich }\space U_{DS}<< U_{GS}-U_{TH}\\
+            I_D & = \frac12\mu \cdot C_{ox}\cdot \frac{W}{L} (U_{GS}-U_{TH})^2\cdot (1+\frac{U_{DS}}{U_{EA}})\\
+            &=\frac12 \mu\cdot C_{ox}\cdot \frac{W}{L}(U_{GS}-U_{TH})^2\cdot(1+\lambda U_{DS})
+        \end{align*}
+    \end{minipage}
+    \begin{minipage}[t]{0.23\textwidth}
+        \subsection*{Kleinsignal}
+            \begin{align*}
+                g_m &= \frac{2\cdot I_D}{(U_{GS}-U_{TH})}\\
+                r_0 &= \frac{1+\lambda V_{DS}}{\lambda \cdot I_D}=\frac{1}{g_{ds}}\\
+                &\approx \frac{1}{\lambda\cdot I_D}\space\text{für}\lambda V_{DS}\ll 1\\
+                i_D &= g_m\cdot u_{GS}+g_{DS}\cdot u_{DS}\\
+                u_a &= - \frac{r_0\cdot R}{r_0+R}\cdot g_m\cdot u_e\\
+                A_v &= \frac{u_a}{u_e}
+            \end{align*}
+    \end{minipage}
 
-\subsection*{Strom-Spannungs-Beziehungen}
-\begin{itemize}
-    \item \textbf{Abschnitt (Cut-off):} $I_D = 0$ für $V_{GS} < V_{TH}$
-    \item \textbf{Linearer Bereich (Triodenbereich):} $I_D = \mu_n C_{ox} \frac{W}{L} [(V_{GS} - V_{TH})V_{DS} - \frac{1}{2}V_{DS}^2]$ für $V_{GS} > V_{TH}$ und $V_{DS} < V_{GS} - V_{TH}$
-    \item \textbf{Sättigungsbereich (Aktivbereich):} $I_D = \frac{1}{2} \mu_n C_{ox} \frac{W}{L} (V_{GS} - V_{TH})^2$ für $V_{GS} > V_{TH}$ und $V_{DS} \ge V_{GS} - V_{TH}$
-\end{itemize}
+    \begin{minipage}[t]{0.49\textwidth}
 wobei:
-\begin{itemize}
-    \item $\mu_n$: Beweglichkeit der Elektronen
-    \item $C_{ox}$: Kapazität des Gate-Oxids pro Fläche
-    \item $W$: Breite des Kanals
-    \item $L$: Länge des Kanals
-    \item $V_{TH}$: Schwellenspannung
+\begin{multicols}{2}
+    \begin{itemize}
+        \item $\mu_n$: Beweglichkeit der Elektronen
+        \item $C_{ox}$: Kapazität des Gate-Oxids pro Fläche
+        \item $W$: Breite des Kanals
+        \item $L$: Länge des Kanals
+        \item $U_{TH}$: Schwellen\\spannung
 \end{itemize}
-
-\subsection*{Kleinsignalparameter}
-\begin{itemize}
-    \item \textbf{Steilheit:} $g_m = \frac{\partial I_D}{\partial V_{GS}} = \mu_n C_{ox} \frac{W}{L} (V_{GS} - V_{TH})$ (im Sättigungsbereich)
-\end{itemize}
+\end{multicols}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\subsection*{Spannungsverstärkung}
+\begin{align*}
+    U_a &= U_{DD}-R\cdot I_D (U_e)\\
+    A &= \frac{\Delta U_a}{\Delta U_e}
+\end{align*}
+\end{minipage}
 
 \section*{Operationsverstärker (OPV)}
-
-\subsection*{Idealer OPV}
-\begin{itemize}
-    \item Unendlich hohe Eingangs-Impedanz
-    \item Null Ausgangs-Impedanz
-    \item Unendlich hohe Verstärkung
-\end{itemize}
-
-\subsection*{Realer OPV}
-\begin{itemize}
-    \item \textbf{Eingangsruhestrom (Bias Current):} $I_B$
-    \item \textbf{Eingangs-Offsetspannung:} $V_{OS}$
-    \item \textbf{Verstärkung mit offenem Regelkreis (Open-Loop Gain):} $A_{OL}$ (endlich)
-    \item \textbf{Gleichtaktunterdrückung (CMRR)} 
-    \item Common-Mode Rejection Ratio :Verhältnis der Diffverstärkung zur Gleichtaktverstärkung.
-    \item \textbf{Bandbreite:} Frequenzbereich, in dem die Verstärkung des OPVs nicht wesentlich abfällt.
-    \item \textbf{Slew Rate:} Maximale Änderungsgeschwindigkeit der Ausgangsspannung.
-\end{itemize}
-
-
-\subsection*{Invertierender Verstärker}
-
-\begin{equation*}
-    V = -\frac{R_2}{R_1}
-\end{equation*}
-
-\subsection*{Nicht-invertierender Verstärker}
-
-\begin{equation*}
-    V = 1 + \frac{R_2}{R_1}
-\end{equation*}
-
-\subsection*{Weitere wichtige OPV-Schaltungen}
-\begin{itemize}
-    \item \textbf{Differenzverstärker:} $V_{out} = \frac{R_2}{R_1}(V_2 - V_1)$ (wenn $R_1 = R_3$ und $R_2 = R_4$)
-    \item \textbf{Integrierer:} $V_{out}(t) = -\frac{1}{RC} \int V_{in}(t) dt$
-    \item \textbf{Differenzierer:} $V_{out}(t) = -RC \frac{dV_{in}(t)}{dt}$
-\end{itemize}
-
-\section*{Wechselstromanalyse (AC)}
-
-\subsection*{Impedanz}
+\begin{minipage}[t]{0.49\textwidth}
+\subsection*{Gundlagen}
 \begin{align*}
-    Z_R &= R \\
-    Z_C &= \frac{1}{j\omega C} \\
-    Z_L &= j\omega L
+    U_D &= U_p-U_N\\
+    U_{aus} &= A_D \cdot(U_P-U_N)\\
+    A_D &= \frac{U_a}{U_D} = \frac{A_{D,0}}{\sqrt{1+(\frac{f}{f_{3dB}})^2}}\\
+    CMRR &= \frac{A_D}{A_{GL}}\\
+    U_{FB} &= K\cdot U_a\\
+    U_a &= A_D\cdot U_D = A_D\cdot(U_e-K\cdot U_a)\\
+    U_a &= \frac{A_D}{1+K\cdot A_D}\cdot U_e\\
+    A &= \frac{A_D}{+K\cdot A_D}\\ 
 \end{align*}
-wobei:
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
 \begin{itemize}
-    \item $\omega = 2\pi f$: Kreisfrequenz
-    \item $j$: Imaginäre Einheit
+    \item $A_D$: Differenzverstärkung
+    \item $G$: Gleichtaktunterdrückung CMRR
+    \item $U_{glmax}$: Gleichtackaussteuerbereich
+    \item $U_{amax}$: Ausgangsaussteuerbereich
+    \item $R_D$: Difernzeingangswiederstand
+    \item $R_a$: Ausgangswiederstand
+    \item $U_{OS}$: Offsetspannung
+    \item Slewrate
+    \subitem $SR = \frac{\Delta U_a}{\Delta t}$
+    \subitem $SR_{max}=A(f)\cdot \hat{u}_e\cdot 2\pi f$
+    \item Gewinbandbreitenprodukt GBW
+    \subitem $GWB = f_T=A_{D,0}\cdot f_{3dB}$
+    \subitem $f_B=\frac{f_T}{A_0}|f_B\cdot A_0= f_T|f_T=A_{D,0}\cdot f_{3dB}$
+    \item $U_{FB}$: Feedbackspannung
+    \item Für $K\rightarrow \infty$
+    \subitem $U_a = \frac1{K}\cdot U_e$
+    \subitem $A =\frac{U_a}{U_e}= \frac1{K}$
 \end{itemize}
+\end{minipage}
+\begin{table}
+    \begin{tabular}{lllll}
+     Nicht invertierender  & $\frac{u_e\rightarrow P}{A\rightarrow R_2 \rightarrow N\wedge R_1\rightarrow gnd}$ & $A=\frac{A_D}{1+A_D\frac{R_1}{R_1+R_2}}$ &  $U_{FB}= \frac{R_1}{R_1+R_2}U_a=K\cdot U_a$&$=K\frac{A_D}{1+K\cdot A_D}U_e$  \\
+     Invertierender & $\frac{gnd\rightarrow P}{U_e\rightarrow R_1 \rightarrow N\wedge R_2 \rightarrow A}$ & $A=\frac{-A}{1+\frac{R_1}{R_2}(1+A_D)}$ &  &  \\
+     Impedanzwandler & $\frac{u_e\rightarrow P}{A\rightarrow N}$ & $U_a=A_D\cdot (U_e-U_a)$  & $U_a=\frac{A_D}{1+A_D}=U_e$ & $i_e=\frac{u_e}{r_D}|r_e=A_D\cdot r_D$ \\
+     &  &  & $u_e = 0$ & $ r_{a,IW}=\frac{u_a}{r_a}=\frac{r_a}{A_D}$\\
+     Spannungsverstärker & $\frac{u_e\rightarrow P}{A\rightarrow R_1\rightarrow N\wedge R_2\rightarrow gnd}$ & $A=1+\frac{R_1}{R_2}$ & $r_e\approx K\cdot A_D\cdot r_D$ &\\
+     Strom-Spannungsw.& $\frac{I_e\rightarrow N\wedge R\rightarrow A}{gnd\rightarrow P}$ & $U_a=-I_e\cdot R$ &  &\\
+     Addierer& $\frac{R_1\wedge R_2 \rightarrow N\wedge R_3 \rightarrow A}{gnd\rightarrow P}$ & $ U_A=-U_1\frac{R_3}{R_1}-U_2\frac{R_3}{R_2}$ & wenn $R_1=R_2=R_3$ & $\Rightarrow U_A=-(U_1+U_2)$ \\
+     Subtrahierer& $\frac{R_1\rightarrow N\wedge R_2\rightarrow A}{R_3\rightarrow P \wedge R_4\rightarrow gnd}$  & $U_A=(\frac{R_2}{R_1})(U_2-U_1)$ & wenn $R_1=R_2=R_3=R_4$ & $\Rightarrow U_A=U_2-U_1$\\
+     Komperator & $\frac{U_e\rightarrow P}{U_{ref}\rightarrow N}$ &  &  &\\
+     N.inv. Schmitt& $\frac{gnd\rightarrow N}{U_e\rightarrow R_1 \rightarrow P\wedge R_2\rightarrow A}$ &  &  &
+    \end{tabular}
+    \end{table}
 
 \end{document}

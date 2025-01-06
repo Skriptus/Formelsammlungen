@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+
+\title{Formelsammlung: Fourier und Statistik}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Fourierreihen}
+\subsection*{Grundlagen}
+\begin{multicols}{2}
+    
+
+\begin{itemize}
+    \item $f(x)=\sin x $ Primitiv$=2\pi$
+    \item $f(x)=\cos \frac{2\pi x}{a} $ Primitiv$=a$
+    \item $f(x)=\cos \frac{2n\pi x}{a} $ Primitiv$=\frac{a}{n}$
+    \item $\cos =$ gerade
+    \item $\sin =$ ungerade
+\end{itemize}
+\end{multicols}
+\subsection*{Trigonometrische Fourierreihe}
+
+\begin{itemize}
+    \item \textbf{Fourierkoeffizienten:}
+    \begin{align*}
+        a_0 &= \frac{1}{2T} \int_{-2T}^{2T} f(x) \, dx \\
+        a_n &= \frac{1}{2T} \int_{-2T}^{2T} f(x) \cos\left(\frac{n\pi x}{2T}\right) \, dx, \quad n \geq 1 \\
+        b_n &= \frac{1}{2T} \int_{-2T}^{2T} f(x) \sin\left(\frac{n\pi x}{2T}\right) \, dx, \quad n \geq 1
+    \end{align*}
+    \item \textbf{Fourierreihe:}
+    $$ f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos\left(\frac{n\pi x}{2T}\right) + b_n \sin\left(\frac{n\pi x}{2T}\right) \right] $$
+\end{itemize}
+
+\subsection*{Komplexe Fourierreihe}
+
+\begin{itemize}
+    \item \textbf{Komplexe Fourierkoeffizienten:}
+    $$ c_n = \frac{1}{2T} \int_{-2T}^{2T} f(x) e^{-i\frac{n\pi x}{2T}} \, dx, \quad n \in \mathbb{Z} $$
+    \item \textbf{Komplexe Fourierreihe:}
+    $$ f(x) = \sum_{n=-\infty}^{\infty} c_n e^{i\frac{n\pi x}{2T}} $$
+    \item \textbf{Zusammenhang zwischen $c_n$ und $a_n, b_n$:}
+        \begin{align*}
+            c_n &= \frac{1}{2}(a_n - ib_n) \\
+            c_{-n} &= \frac{1}{2}(a_n + ib_n) \\
+            a_n &= c_n + c_{-n} \\
+            b_n &= i(c_n - c_{-n})
+        \end{align*}
+\end{itemize}
+
+\section*{Fouriertransformation}
+
+Für eine nicht-periodische Funktion $f(x)$:
+
+\begin{itemize}
+    \item \textbf{Fouriertransformation:}
+    $$ \hat{f}(\omega) = F\{f(x)\} = \int_{-\infty}^{\infty} f(x) e^{-i\omega x} \, dx $$
+    \item \textbf{Inverse Fouriertransformation:}
+    $$ f(x) = F^{-1}\{\hat{f}(\omega)\} = \frac{1}{2\pi} \int_{-\infty}^{\infty} \hat{f}(\omega) e^{i\omega x} \, d\omega $$
+\end{itemize}
+
+\section*{Beschreibende Statistik}
+
+\subsection*{Lagemaße}
+
+\begin{itemize}
+    \item \textbf{Mittelwert (arithmetisches Mittel):} $\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$
+    \item \textbf{Median (Zentralwert):} Der mittlere Wert einer sortierten Datenreihe.
+    \item \textbf{Modus (Modalwert):} Der häufigste Wert in einer Datenreihe.
+\end{itemize}
+
+\subsection*{Streuungsmaße}
+
+\begin{itemize}
+    \item \textbf{Varianz:} $s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2$ (Stichprobenvarianz)
+    \item \textbf{Standardabweichung:} $s = \sqrt{s^2}$
+    \item \textbf{Spannweite:} Differenz zwischen dem größten und kleinsten Wert.
+    \item \textbf{Interquartilsabstand (IQR):} Differenz zwischen dem oberen und unteren Quartil (Q3 - Q1).
+\end{itemize}
+
+\subsection*{Weitere Kennzahlen}
+
+\begin{itemize}
+    \item \textbf{Kovarianz:} $cov(x,y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})$
+    \item \textbf{Korrelationskoeffizient (Pearson):} $r = \frac{cov(x,y)}{s_x s_y}$
+\end{itemize}
+
+\end{document}
